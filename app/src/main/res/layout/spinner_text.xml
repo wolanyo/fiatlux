@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    android:id="@android:id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawablePadding="20dp"
+    android:fontFamily="sans-serif"
+    android:paddingLeft="@dimen/padding_15"
+    android:paddingRight="4dp"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="@dimen/abc_text_size_title_material_toolbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>

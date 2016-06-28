@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="0dp"
+    android:id="@+id/card_view_joke"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_marginBottom="1dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    android:layout_marginLeft="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp">
+
+        <ImageView
+            android:id="@+id/list_image"
+            style="@style/ListViewImageStyle"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/afra"/>
+
+        <TextView
+            android:id="@+id/list_title"
+            style="@style/ListViewTinyTitleStyle"
+            android:text="hello"
+            android:layout_toRightOf="@id/list_image"/>
+
+        <TextView
+            android:id="@+id/list_resume"
+            style="@style/ListViewTinyDescriptionStyle"
+            android:text="hello"
+            android:layout_below="@id/list_title"
+            android:elegantTextHeight="true"
+            android:layout_toRightOf="@id/list_image"/>
+
+        <TextView
+            android:id="@+id/list_date"
+            style="@style/DateTinyTextViewStyle"
+            android:text="hello"
+            android:layout_below="@id/list_resume"
+            android:elegantTextHeight="true"
+            android:layout_toRightOf="@id/list_image"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

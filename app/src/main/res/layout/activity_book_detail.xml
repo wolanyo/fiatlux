@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding_15"
+        android:paddingLeft="@dimen/padding_15"
+        android:paddingRight="@dimen/padding_15"
+        tools:context="com.wolasoft.fiatlux.activities.YoutubePlayerActivity">
+
+        <ImageView
+            android:id="@+id/book_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="@dimen/margin_25"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:src="@drawable/afra"/>
+
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="@color/colorBlack"
+            android:text="hello"
+            android:layout_toRightOf="@id/book_image"/>
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_25"
+            android:textSize="13sp"
+            android:layout_toRightOf="@id/book_image"
+            android:layout_below="@id/book_title"/>
+
+        <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/book_image">
+
+            <Button
+                android:id="@+id/book_preview"
+                android:text="Extrait gratuit"
+                style="@style/ButtonWhite"/>
+
+            <Button
+                android:id="@+id/book_buy"
+                style="@style/ButtonBlue"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_below="@id/button_layout"
+            style="@style/HorizontalGreyLineStyle"/>
+
+        <TextView
+            android:id="@+id/book_resume"
+            style="@style/ContentWithoutPaddingTextViewStyle"
+            android:layout_below="@id/separator"/>
+
+    </RelativeLayout>
+</ScrollView>

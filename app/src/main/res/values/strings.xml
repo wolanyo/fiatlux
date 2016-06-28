@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">FiatLux</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--Menu Item-->
+    <string name="nav_post_title">Publication</string>
+    <string name="nav_course_title">Cours</string>
+
+    <string name="nav_all_post">Articles</string>
+    <string name="nav_video_post">Articles Vidéo</string>
+    <string name="nav_audio_post">Articles Audio</string>
+    <string name="nav_thinking">Graînes à méditer</string>
+
+    <string name="nav_course">Cours</string>
+
+    <string name="nav_tv_program">Emission télé</string>
+    <string name="nav_seminary">Séminaire</string>
+
+    <string name="nav_self_developpement">Développement personnel</string>
+    <string name="nav_appointment">Rendez-vous avec le maître</string>
+    <string name="nav_program">Programme du Param Akshar</string>
+
+    <string name="nav_saloon">Salon de dicussion</string>
+    <string name="nav_donate">Don</string>
+    <string name="nav_help">Rendons-nous service</string>
+    <string name="nav_shop">Boutique</string>
+    <string name="nav_message">Messagerie</string>
+    <string name="nav_joke">Blagues</string>
+    <string name="nav_story">Histoires étrange</string>
+    <string name="nav_settings">Réglages</string>
+
+    <string name="nav_about">A propos</string>
+    <string name="nav_share">Partager</string>
+    <!--Activity menu item-->
+    <string name="menu_favoris">Favoris</string>
+    <string name="menu_share">Partager</string>
+
+    <string name="title_activity_post_details"></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_post_detail">Article</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_joke_detail">Blague/Histoire/Pensée</string>
+    <string name="title_activity_strange_story_detail">Histoire étrange</string>
+    <string name="title_activity_chapter_list">Chapitres</string>
+    <string name="title_activity_lesson_list">Cours</string>
+    <string name="title_activity_chapter_detail">Chapitre</string>
+
+    <!--Error réseau -->
+    <string name="network_issue">Serveur hors service ou erreur réseau\nTirer vers le bas pour réessayer</string>
+    <string name="try_again">Réessayer</string>
+    <string name="refreshing">Rafraichissement</string>
+    <string name="no_data_to_show">Aucune donnée à afficher</string>
+    <string name="fail_to_execute">Execution impossible</string>
+    <string name="no_data_on_response_success">Aucune donnée retournée</string>
+
+    <string name="player_error">Error initializing YouTube player</string>
+    <string name="on_progress">Chargement des données en cours</string>
+    <string name="title_activity_book_detail">Détails du livre</string>
+    <string name="chapter_label">Chapitre</string>
+    <string name="hint_name">Nom</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_amount">Montant</string>
+    <string name="btn_donate">Valider</string>
+    <string name="hint_phone">Numéro de téléphone</string>
+    <string name="empty_message">Aucun élément à afficher\nTirer vers le bas pour actualiser</string>
+    <string name="spirituality">Spiritualité</string>
+    <string name="self_development">Développement personnel</string>
+    <string name="title_activity_settings">Paramètres</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Nom</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_section">Section par défaut</string>
+    <string-array name="pref_section_list_titles">
+        <item>Toutes</item>
+        <item>Spiritualitée</item>
+        <item>Développement personnel</item>
+    </string-array>
+    <string-array name="pref_section_list_values">
+        <item>ALL</item>
+        <item>SPIRITUALITY</item>
+        <item>DEVELOPMENT</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="btn_payment_flooz">Paiement moov FLOOZ</string>
+    <string name="btn_payment_togocell">Paiement TOGOCELL</string>
+    <string name="btn_payment_chronocash">Paiement CHRONOCASH</string>
+    <string name="btn_payment_card">Paiement VISA, MASTERCARD, CB</string>
+    <string name="btn_payment_paypal">Paiement par paypal</string>
+    <string name="btn_payment_western_union">Western Union</string>
+
+    <string name="about_text">
+
+    </string>
+
+    <string name="title_activity_about">Avant propos</string>
+    <string name="nav_foreword">Avant propos</string>
+    <string name="title_activity_payment">Paiement</string>
+
+    <string-array name="post_type">
+        <item>Tous</item>
+        <item>Audio</item>
+        <item>Video</item>
+    </string-array>
+</resources>

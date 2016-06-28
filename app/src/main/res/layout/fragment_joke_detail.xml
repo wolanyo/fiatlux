@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".activities.JokeStoryReflectDetailActivity$PlaceholderFragment">
+
+        <ImageView
+            android:id="@+id/joke_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/noimage"/>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_below="@id/joke_detail_image"
+            style="@style/HorizontalLineStyle"/>
+
+        <TextView
+            android:id="@+id/joke_detail_title"
+            style="@style/TitleTextViewStyle"
+            android:layout_below="@id/separator" />
+
+        <TextView
+            android:id="@+id/joke_detail_content"
+            style="@style/WebViewStyle"
+            android:layout_below="@id/joke_detail_title"/>
+
+    </RelativeLayout>
+</ScrollView>

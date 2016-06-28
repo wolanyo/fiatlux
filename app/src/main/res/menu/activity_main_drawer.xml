@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">Foreword
+
+    <group android:id="@+id/foreword" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_foreword"
+            android:icon="@drawable/ic_foreword"
+            android:title="@string/nav_foreword" />
+    </group>
+    <group android:id="@+id/posts" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_all_post"
+            android:icon="@drawable/ic_menu_course"
+            android:title="@string/nav_all_post" />
+        <!--item
+            android:id="@+id/nav_video_post"
+            android:icon="@drawable/ic_menu_movie"
+            android:title="@string/nav_video_post" />
+        <item
+            android:id="@+id/nav_audio_post"
+            android:icon="@drawable/ic_menu_audio"
+            android:title="@string/nav_audio_post" /-->
+    </group>
+
+    <group android:id="@+id/group_course" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_course"
+            android:icon="@drawable/ic_menu_course"
+            android:title="@string/nav_course" />
+    </group>
+
+    <group android:id="@+id/group_multimedia" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_tv_program"
+            android:icon="@drawable/ic_menu_tv_program"
+            android:title="@string/nav_tv_program" />
+        <item
+            android:id="@+id/nav_seminary"
+            android:icon="@drawable/ic_menu_seminary"
+            android:title="@string/nav_seminary" />
+    </group>
+
+    <group android:id="@+id/group_jokestory" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_thinking"
+            android:icon="@drawable/ic_menu_thinking"
+            android:title="@string/nav_thinking" />
+        <item
+            android:id="@+id/nav_joke"
+            android:icon="@drawable/ic_menu_joke"
+            android:title="@string/nav_joke" />
+        <item
+            android:id="@+id/nav_story"
+            android:icon="@drawable/ic_menu_story"
+            android:title="@string/nav_story" />
+    </group>
+
+    <group android:id="@+id/group_other" android:checkableBehavior="single">
+        <!--item
+            android:id="@+id/nav_saloon"
+            android:icon="@drawable/ic_menu_saloon"
+            android:title="@string/nav_saloon" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_menu_messenger"
+            android:title="@string/nav_message" /-->
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@drawable/ic_menu_shopping"
+            android:title="@string/nav_shop" />
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_menu_donate"
+            android:title="@string/nav_donate" />
+        <!--item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_help"
+            android:title="@string/nav_help" /-->
+    </group>
+
+    <group android:id="@+id/group_settings" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/nav_settings" />
+    </group>
+
+    <group android:id="@+id/group_about" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/nav_about" />
+        <!--item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/nav_share"
+            /-->
+    </group>
+
+</menu>

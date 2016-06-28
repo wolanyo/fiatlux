@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_15"
+    android:orientation="vertical"
+    tools:context="com.wolasoft.fiatlux.activities.PaymentTypeActivity">
+
+    <Button
+        android:id="@+id/btn_payment_flooz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_flooz"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_payment_togocell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_togocell"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_payment_chronocash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_chronocash"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_payment_western_union"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_western_union"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_payment_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_card"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_payment_paypal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_payment_paypal"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

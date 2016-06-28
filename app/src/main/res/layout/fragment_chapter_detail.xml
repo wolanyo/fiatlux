@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.wolasoft.fiatlux.activities.ChapterDetailActivity$PlaceholderFragment">
+
+        <ImageView
+            android:id="@+id/chapter_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/kwanyin"/>
+
+        <TextView
+            android:id="@+id/chapter_detail_chapter"
+            style="@style/DateTextViewStyle"
+            android:layout_below="@id/chapter_detail_image" />
+
+        <TextView
+            android:id="@+id/chapter_detail_chapter_number"
+            style="@style/TimeTextViewStyle"
+            android:layout_toRightOf="@+id/chapter_detail_chapter"
+            android:layout_below="@+id/chapter_detail_image" />
+
+        <TextView
+            android:id="@+id/chapter_detail_title"
+            style="@style/TitleTextViewStyle"
+            android:layout_below="@id/chapter_detail_chapter_number"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/chapter_detail_content"
+            style="@style/WebViewStyle"
+            android:layout_below="@id/chapter_detail_title"/>
+    </RelativeLayout>
+
+</ScrollView>
