@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 import com.wolasoft.fiatlux.R;
 
@@ -83,11 +85,22 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    /*
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.transition.pull_in_right, R.transition.push_out_left);
     }
-    */
+
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 }

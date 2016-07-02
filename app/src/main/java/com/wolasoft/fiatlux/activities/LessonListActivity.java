@@ -44,7 +44,7 @@ public class LessonListActivity extends BaseActivity {
         }*/
 
         lessonTypeID = getIntent().getIntExtra(LESSON_TYPE_ID, 0);
-        Toast.makeText(getApplicationContext(), "instance not saved", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "instance not saved", Toast.LENGTH_SHORT).show();
 
         rv = (RecyclerView) findViewById(R.id.lesson_list_recyclerview);
         rv.setLayoutManager(new LinearLayoutManager(this));
