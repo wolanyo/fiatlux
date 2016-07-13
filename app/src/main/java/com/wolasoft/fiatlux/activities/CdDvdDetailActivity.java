@@ -63,7 +63,7 @@ public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubeP
 
         Log.i("CD DVD ID", cdDvdId);
 
-        service = new CdDvdService();
+        service = CdDvdService.getInstance();
 
         initializeView(cdDvdId);
     }

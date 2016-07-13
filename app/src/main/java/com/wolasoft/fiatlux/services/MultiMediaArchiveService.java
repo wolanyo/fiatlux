@@ -1,14 +1,9 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.MultiMediaArchiveListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
 import com.wolasoft.fiatlux.interfaces.IMultiMediaArchiveService;
-import com.wolasoft.fiatlux.models.MultiMediaArchive;
 import com.wolasoft.fiatlux.models.MultiMediaArchive;
 
 import java.util.List;
@@ -22,7 +17,21 @@ import retrofit2.Response;
  */
 public class MultiMediaArchiveService implements IMultiMediaArchiveService{
 
-    public MultiMediaArchiveService() {
+    private static volatile MultiMediaArchiveService instance = null;
+
+    private MultiMediaArchiveService(){
+        super();
+    }
+
+    public static final MultiMediaArchiveService getInstance(){
+        if (MultiMediaArchiveService.instance == null){
+            synchronized (MultiMediaArchiveService.class){
+                if (MultiMediaArchiveService.instance == null) {
+                    MultiMediaArchiveService.instance = new MultiMediaArchiveService();
+                }
+            }
+        }
+        return MultiMediaArchiveService.instance;
     }
 
     @Override

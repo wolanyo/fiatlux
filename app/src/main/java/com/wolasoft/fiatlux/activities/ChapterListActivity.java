@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -58,7 +59,7 @@ public class ChapterListActivity extends BaseActivity {
         rv.setAdapter(adapter);
         lessonId = getIntent().getIntExtra(LESSON_ID, 0);
 
-        service = new ChapterService();
+        service = ChapterService.getInstance();
 
         initializeView();
 
@@ -88,6 +89,14 @@ public class ChapterListActivity extends BaseActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         lessonId = savedInstanceState.getInt(LESSON_ID, 0);
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.chapter_list, menu);
+
+        return true;
     }
 
     @Override

@@ -17,6 +17,23 @@ import retrofit2.Response;
  */
 public class BookService implements IBookService {
 
+    private static volatile BookService instance = null;
+
+    private BookService(){
+        super();
+    }
+
+    public static final BookService getInstance(){
+        if (BookService.instance == null){
+            synchronized (BookService.class){
+                if (BookService.instance == null) {
+                    BookService.instance = new BookService();
+                }
+            }
+        }
+        return BookService.instance;
+    }
+
     @Override
     public void getAll(String section, final CallBack<List<Book>> callback) {
         FiatLuxClient client = FiatLuxServiceGenerator.createService(FiatLuxClient.class);

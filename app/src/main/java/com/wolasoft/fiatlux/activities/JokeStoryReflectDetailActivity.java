@@ -137,7 +137,7 @@ public class JokeStoryReflectDetailActivity extends BaseActivity {
             jokeContent = (TextView) rootView.findViewById(R.id.joke_detail_content);
             jokeContent.setTypeface(((BaseActivity)getActivity()).getContentTypeFace());
 
-            service = new JokeStoryReflectService();
+            service = JokeStoryReflectService.getInstance();
 
             initializeView(jokeId);
 

@@ -76,7 +76,7 @@ public class JokeStoryReflectListFragment extends BaseFragment {
         rv.setAdapter(adapter);
         TextView textView = (TextView) view.findViewById(R.id.network_issue_textview);
 
-        service = new JokeStoryReflectService();
+        service = JokeStoryReflectService.getInstance();
         initializeView();
 
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);

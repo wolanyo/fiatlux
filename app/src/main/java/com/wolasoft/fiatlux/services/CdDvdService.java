@@ -1,14 +1,9 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.CdDvdListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
 import com.wolasoft.fiatlux.interfaces.ICdDvdService;
-import com.wolasoft.fiatlux.models.CdDvd;
 import com.wolasoft.fiatlux.models.CdDvd;
 
 import java.util.List;
@@ -21,23 +16,21 @@ import retrofit2.Response;
  * Created by kkoudo on 17/04/2016.
  */
 public class CdDvdService implements ICdDvdService {
+    private static volatile CdDvdService instance = null;
 
-    CdDvdListAdapter adapter = null;
-    Context context = null;
-    TextView textView = null;
-
-    public CdDvdService() {
+    private CdDvdService(){
+        super();
     }
 
-    public CdDvdService(CdDvdListAdapter adapter, Context context) {
-        this.adapter = adapter;
-        this.context = context;
-    }
-
-    public CdDvdService(CdDvdListAdapter adapter, Context context, TextView textView) {
-        this.adapter = adapter;
-        this.context = context;
-        this.textView = textView;
+    public static final CdDvdService getInstance(){
+        if (CdDvdService.instance == null){
+            synchronized (CdDvdService.class){
+                if (CdDvdService.instance == null) {
+                    CdDvdService.instance = new CdDvdService();
+                }
+            }
+        }
+        return CdDvdService.instance;
     }
 
     @Override

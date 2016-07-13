@@ -21,31 +21,8 @@ public class ForewordActivity extends BaseActivity {
         setContentView(R.layout.activity_about);
         aboutTextView = (WebView) findViewById(R.id.about_textview);
 
-        //aboutTextView.setTypeface(contentTypeFace);
-        new DownloadImageTask().execute();
+        aboutTextView.loadUrl("file:///android_asset/html/about.html");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    private class DownloadImageTask extends AsyncTask<Void, Void, String> {
-        /**
-         * The system calls this to perform work in a worker thread and
-         * delivers it the parameters given to AsyncTask.execute()
-         */
-        @Override
-        protected String doInBackground(Void... voids) {
-            String text = getString(R.string.about_text);
-            return  text;
-        }
-
-        /**
-         * The system calls this to perform work in the UI thread and delivers
-         * the result from doInBackground()
-         */
-        protected void onPostExecute(String text) {
-            aboutTextView.loadUrl("file:///android_asset/html/about.html");
-        }
-
-
     }
 }

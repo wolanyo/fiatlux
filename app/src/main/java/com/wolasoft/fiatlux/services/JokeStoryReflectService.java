@@ -1,9 +1,5 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.JokeStoryReflectListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
@@ -20,22 +16,21 @@ import retrofit2.Response;
  * Created by kkoudo on 17/04/2016.
  */
 public class JokeStoryReflectService implements IJokeStoryReflectService{
-    JokeStoryReflectListAdapter adapter = null;
-    Context context = null;
-    TextView textView = null;
+    private static volatile JokeStoryReflectService instance = null;
 
-    public JokeStoryReflectService() {
+    private JokeStoryReflectService(){
+        super();
     }
 
-    public JokeStoryReflectService(JokeStoryReflectListAdapter adapter, Context context) {
-        this.adapter = adapter;
-        this.context = context;
-    }
-
-    public JokeStoryReflectService(JokeStoryReflectListAdapter adapter, Context context, TextView textView) {
-        this.adapter = adapter;
-        this.context = context;
-        this.textView = textView;
+    public static final JokeStoryReflectService getInstance(){
+        if (JokeStoryReflectService.instance == null){
+            synchronized (JokeStoryReflectService.class){
+                if (JokeStoryReflectService.instance == null) {
+                    JokeStoryReflectService.instance = new JokeStoryReflectService();
+                }
+            }
+        }
+        return JokeStoryReflectService.instance;
     }
 
     @Override

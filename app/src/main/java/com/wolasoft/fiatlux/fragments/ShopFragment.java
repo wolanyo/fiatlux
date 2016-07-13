@@ -115,9 +115,9 @@ public class ShopFragment extends BaseFragment {
         dvdAdapter = new CdDvdListAdapter(getActivity().getApplicationContext());
         dvdRecyclerView.setAdapter(dvdAdapter);;
 
-        bookService = new BookService();
-        cdService = new CdDvdService();
-        dvdService = new CdDvdService();
+        bookService = BookService.getInstance();
+        cdService = CdDvdService.getInstance();
+        dvdService = CdDvdService.getInstance();
 
         initializeView();
     }

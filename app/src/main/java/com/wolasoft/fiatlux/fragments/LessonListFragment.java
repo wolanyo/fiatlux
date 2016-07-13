@@ -50,7 +50,7 @@ public class LessonListFragment extends Fragment {
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new LessonListAdapter(getActivity().getApplicationContext());
         rv.setAdapter(adapter);
-        LessonService service = new LessonService();
+        LessonService service = LessonService.getInstance();
         //service.getAll("");
     }
 

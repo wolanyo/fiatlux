@@ -1,14 +1,10 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.ChapterListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
+import com.wolasoft.fiatlux.enums.HttpStatus;
 import com.wolasoft.fiatlux.interfaces.IChapterService;
 import com.wolasoft.fiatlux.models.Chapter;
-import com.wolasoft.fiatlux.enums.HttpStatus;
 
 import java.util.List;
 
@@ -20,22 +16,21 @@ import retrofit2.Response;
  * Created by kkoudo on 17/04/2016.
  */
 public class ChapterService implements IChapterService {
-    ChapterListAdapter adapter = null;
-    Context context = null;
-    TextView textView = null;
+    private static volatile ChapterService instance = null;
 
-    public ChapterService() {
+    private ChapterService(){
+        super();
     }
 
-    public ChapterService(ChapterListAdapter adapter, Context context) {
-        this.adapter = adapter;
-        this.context = context;
-    }
-
-    public ChapterService(ChapterListAdapter adapter, Context context, TextView textView) {
-        this.adapter = adapter;
-        this.context = context;
-        this.textView = textView;
+    public static final ChapterService getInstance(){
+        if (ChapterService.instance == null){
+            synchronized (ChapterService.class){
+                if (ChapterService.instance == null) {
+                    ChapterService.instance = new ChapterService();
+                }
+            }
+        }
+        return ChapterService.instance;
     }
 
     @Override

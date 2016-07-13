@@ -3,6 +3,7 @@ package com.wolasoft.fiatlux.activities;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -67,20 +68,18 @@ public class PostDetailActivity extends BaseActivity {
         postIdList = getIntent().getStringArrayListExtra(POSTS_ID_LIST);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), postIdList);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), postIdList, fab);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(currentPosition);
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
             }
         });*/
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -124,11 +123,11 @@ public class PostDetailActivity extends BaseActivity {
         private TextView postDate;
         private TextView postTime;
         private TextView postContent;
-        private Button playerButton;
         private ImageView mediaTypeImage ;
         private PostService service;
         private Animation fadeInAnimation;
         private Animation fadeOutAnimation;
+        private FloatingActionButton floatingActionButton;
 
         public PlaceholderFragment() {
         }
@@ -168,10 +167,12 @@ public class PostDetailActivity extends BaseActivity {
             postContent = (TextView) rootView.findViewById(R.id.post_detail_content);
             postContent.setTypeface(((PostDetailActivity)getActivity()).getContentTypeFace());
 
-            playerButton = (Button) rootView.findViewById(R.id.player_button);
             mediaTypeImage = (ImageView) rootView.findViewById(R.id.media_type_image);
 
-            service = new PostService();
+            View view = getActivity().findViewById(R.id.fab);
+            floatingActionButton = (FloatingActionButton) view;
+
+            service = PostService.getInstance();
             initializeView(postId);
 
             return rootView;
@@ -192,22 +193,22 @@ public class PostDetailActivity extends BaseActivity {
                     postContent.setText(Html.fromHtml(data.getContent()));
 
                     if (data.getMediaType().compareToIgnoreCase("VIDEO") == 0) {
-                        playerButton.setText("LIRE LA VIDEO");
+                        floatingActionButton.setVisibility(View.VISIBLE);
                         mediaTypeImage.setImageResource(R.drawable.ic_menu_movie);
                     }
                     else if(data.getMediaType().compareToIgnoreCase("AUDIO") == 0) {
-                        playerButton.setText("LIRE L'AUDIO");
+                        floatingActionButton.setVisibility(View.VISIBLE);
                         mediaTypeImage.setImageResource(R.drawable.ic_menu_audio);
                     }
                     else {
-                        playerButton.setVisibility(View.GONE);
+                        floatingActionButton.setVisibility(View.GONE);
                         mediaTypeImage.setImageResource(R.drawable.ic_text);
                     }
 
-                    playerButton.setOnClickListener(new View.OnClickListener() {
+                    floatingActionButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+                            Intent intent = new Intent(getContext(), VimeoPlayerActivity.class);
                             intent.putExtra("media_id", data.getMediaURL());
                             startActivity(intent);
                         }
@@ -232,8 +233,9 @@ public class PostDetailActivity extends BaseActivity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private ArrayList<String> postIdList;
+        private FloatingActionButton floatingActionButton;
 
-        public SectionsPagerAdapter(FragmentManager fm, ArrayList<String> postIdList) {
+        public SectionsPagerAdapter(FragmentManager fm, ArrayList<String> postIdList, FloatingActionButton fab) {
             super(fm);
             this.postIdList = postIdList;
         }

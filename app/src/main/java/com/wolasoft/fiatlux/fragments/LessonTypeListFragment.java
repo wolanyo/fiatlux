@@ -64,7 +64,7 @@ public class LessonTypeListFragment extends BaseFragment {
         emptyTextView = (TextView) view.findViewById(R.id.empty_textview);
         emptyImageView = (ImageView) view.findViewById(R.id.empty_image);
 
-        service = new LessonTypeService();
+        service = LessonTypeService.getInstance();
         initializeView();
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){

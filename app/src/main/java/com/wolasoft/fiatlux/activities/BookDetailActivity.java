@@ -46,7 +46,7 @@ public class BookDetailActivity extends BaseActivity {
 
         String bookId = getIntent().getStringExtra(BOOK_ID);
 
-        service = new BookService();
+        service = BookService.getInstance();
 
         initializeView(bookId);
 

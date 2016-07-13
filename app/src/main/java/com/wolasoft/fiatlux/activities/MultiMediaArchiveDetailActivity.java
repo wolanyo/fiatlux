@@ -54,7 +54,7 @@ public class MultiMediaArchiveDetailActivity extends YouTubeBaseActivity impleme
         Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/caviar.ttf");
         archiveContent.setTypeface(contentTypeFace);
 
-        service = new MultiMediaArchiveService();
+        service = MultiMediaArchiveService.getInstance();
         initializeView(archiveId);
 
     }

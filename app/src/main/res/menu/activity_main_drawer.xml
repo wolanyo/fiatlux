@@ -10,7 +10,7 @@
     <group android:id="@+id/posts" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_all_post"
-            android:icon="@drawable/ic_menu_course"
+            android:icon="@drawable/ic_menu_post"
             android:title="@string/nav_all_post" />
         <!--item
             android:id="@+id/nav_video_post"
@@ -27,17 +27,25 @@
             android:id="@+id/nav_course"
             android:icon="@drawable/ic_menu_course"
             android:title="@string/nav_course" />
+        <item
+            android:id="@+id/nav_planning"
+            android:icon="@drawable/ic_menu_calendar"
+            android:title="@string/nav_planning" />
     </group>
 
     <group android:id="@+id/group_multimedia" android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_multi_media"
+            android:icon="@drawable/ic_menu_tv_program"
+            android:title="@string/nav_multi_media" />
+        <!--item
             android:id="@+id/nav_tv_program"
             android:icon="@drawable/ic_menu_tv_program"
             android:title="@string/nav_tv_program" />
         <item
             android:id="@+id/nav_seminary"
             android:icon="@drawable/ic_menu_seminary"
-            android:title="@string/nav_seminary" />
+            android:title="@string/nav_seminary" /-->
     </group>
 
     <group android:id="@+id/group_jokestory" android:checkableBehavior="single">
@@ -68,14 +76,18 @@
             android:id="@+id/nav_shop"
             android:icon="@drawable/ic_menu_shopping"
             android:title="@string/nav_shop" />
-        <item
+        <!--item
             android:id="@+id/nav_donate"
             android:icon="@drawable/ic_menu_donate"
-            android:title="@string/nav_donate" />
+            android:title="@string/nav_donate" /-->
         <!--item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_menu_help"
             android:title="@string/nav_help" /-->
+        <item
+            android:id="@+id/nav_advertising"
+            android:icon="@drawable/ic_menu_publicity"
+            android:title="@string/nav_advertising" />
     </group>
 
     <group android:id="@+id/group_settings" android:checkableBehavior="single">
@@ -83,18 +95,10 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_settings"
             android:title="@string/nav_settings" />
-    </group>
-
-    <group android:id="@+id/group_about" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_about"
             android:title="@string/nav_about" />
-        <!--item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_menu_share"
-            android:title="@string/nav_share"
-            /-->
     </group>
 
 </menu>

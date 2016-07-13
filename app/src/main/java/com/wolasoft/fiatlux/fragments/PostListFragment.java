@@ -32,7 +32,6 @@ public class PostListFragment extends BaseFragment {
     private PostListAdapter adapter = null;
     private LinearLayoutManager layoutManager = null;
     private RecyclerView rv = null;
-    private TextView textView = null;
     private PostService service = null;
     private TextView emptyTextView;
     private ImageView emptyImageView;
@@ -68,7 +67,7 @@ public class PostListFragment extends BaseFragment {
         emptyTextView = (TextView) view.findViewById(R.id.empty_textview);
         emptyImageView = (ImageView) view.findViewById(R.id.empty_image);
 
-        service = new PostService();
+        service = PostService.getInstance();
         initializeView();
 
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);

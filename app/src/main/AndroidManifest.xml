@@ -36,8 +36,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,8 +65,8 @@
         </activity>
         <activity
             android:name=".activities.LessonListActivity"
-            android:launchMode="singleTask"
             android:label="@string/title_activity_lesson_list"
+            android:launchMode="singleTask"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -75,8 +75,8 @@
         </activity>
         <activity
             android:name=".activities.ChapterListActivity"
-            android:launchMode="singleTask"
             android:label="@string/title_activity_chapter_list"
+            android:launchMode="singleTask"
             android:parentActivityName=".activities.LessonListActivity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -129,24 +129,53 @@
                 android:value="com.wolasoft.fiatlux.MainActivity" />
         </activity>
 
-        <service android:name="com.wolasoft.fiatlux.gcm.RegistrationService" android:exported="false" />
-
         <service
-            android:name="com.wolasoft.fiatlux.gcm.TokenRefreshListenerService"
+            android:name=".gcm.RegistrationService"
+            android:exported="false" />
+        <service
+            android:name=".gcm.TokenRefreshListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
-
         <service
-            android:name="com.wolasoft.fiatlux.gcm.NotificationsListenerService"
-            android:exported="false" >
+            android:name=".gcm.NotificationsListenerService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".activities.MultiMediaActivity"
+            android:label="@string/title_activity_multi_media"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wolasoft.fiatlux.MainActivity" />
+        </activity>
+        <activity android:name=".activities.VimeoPlayerActivity" />
+        <activity
+            android:name=".activities.TimeTableDetailsActivity"
+            android:label="@string/title_activity_planning_details"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wolasoft.fiatlux.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.PublicityDetailsActivity"
+            android:label="@string/title_activity_publicity_details"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wolasoft.fiatlux.MainActivity" />
+        </activity>
+        <activity android:name=".activities.HelpDetailsActivity"></activity>
     </application>
 
 </manifest>

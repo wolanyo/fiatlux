@@ -19,8 +19,7 @@
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:layout_marginRight="@dimen/margin_25"
-            android:layout_marginBottom="@dimen/margin_ten"
-            android:src="@drawable/afra"/>
+            android:layout_marginBottom="@dimen/margin_ten"/>
 
         <TextView
             android:id="@+id/book_title"

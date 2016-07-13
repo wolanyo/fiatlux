@@ -21,22 +21,22 @@ import android.widget.TextView;
 
 import com.wolasoft.fiatlux.activities.BaseActivity;
 import com.wolasoft.fiatlux.activities.ForewordActivity;
+import com.wolasoft.fiatlux.activities.MultiMediaActivity;
 import com.wolasoft.fiatlux.activities.SettingsActivity;
-import com.wolasoft.fiatlux.adapters.PostAudioVideoListAdapter;
-import com.wolasoft.fiatlux.fragments.DonateFragment;
 import com.wolasoft.fiatlux.fragments.JokeStoryReflectListFragment;
 import com.wolasoft.fiatlux.fragments.LessonTypeListFragment;
-import com.wolasoft.fiatlux.fragments.MultiMediaArchiveListFragment;
 import com.wolasoft.fiatlux.fragments.PostAudioVideoListFragment;
 import com.wolasoft.fiatlux.fragments.PostListFragment;
+import com.wolasoft.fiatlux.fragments.PublicityFragment;
 import com.wolasoft.fiatlux.fragments.ShopFragment;
+import com.wolasoft.fiatlux.fragments.TimeTableFragment;
 import com.wolasoft.fiatlux.gcm.RegistrationService;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TV_PROGRAM = "TVPROGRAM";
-    private static final String SEMINATY = "SEMINARY";
+    private static final String SEMINARY = "SEMINARY";
     private static final String AUDIO_POST = "AUDIO";
     private static final String VIDEO_POST = "VIDEO";
     private static final String JOKE = "BLAGUE";
@@ -177,6 +177,10 @@ public class MainActivity extends BaseActivity
                 LessonTypeListFragment fragment = LessonTypeListFragment.newInstance();
                 replaceFragment(fragment, R.string.nav_course);
                 break;
+            case R.id.nav_planning:
+                TimeTableFragment timeTableFragment = TimeTableFragment.newInstance();
+                replaceFragment(timeTableFragment, R.string.nav_planning);
+                break;
             case R.id.nav_thinking:
                 JokeStoryReflectListFragment reflectListfragment = JokeStoryReflectListFragment.newInstance(REFLECT);
                 replaceFragment(reflectListfragment, R.string.nav_thinking);
@@ -197,21 +201,29 @@ public class MainActivity extends BaseActivity
                 PostAudioVideoListFragment postAudioFragment = PostAudioVideoListFragment.newInstance(AUDIO_POST);
                 replaceFragment(postAudioFragment, R.string.nav_audio_post);
                 break;*/
-            case R.id.nav_tv_program:
+            case R.id.nav_multi_media:
+                Intent multiMediaIntent = new Intent(getApplicationContext(), MultiMediaActivity.class);
+                startActivity(multiMediaIntent);
+                break;
+            /*case R.id.nav_tv_program:
                 MultiMediaArchiveListFragment tvProgramArchiveListFragment = MultiMediaArchiveListFragment.newInstance(TV_PROGRAM);
                 replaceFragment(tvProgramArchiveListFragment, R.string.nav_tv_program);
                 break;
             case R.id.nav_seminary:
-                MultiMediaArchiveListFragment seminaryArchiveListFragment = MultiMediaArchiveListFragment.newInstance(SEMINATY);
+                MultiMediaArchiveListFragment seminaryArchiveListFragment = MultiMediaArchiveListFragment.newInstance(SEMINARY);
                 replaceFragment(seminaryArchiveListFragment, R.string.nav_seminary);
-                break;
+                break;*/
             case R.id.nav_shop:
                 ShopFragment shopFragment = ShopFragment.newInstance("", "");
                 replaceFragment(shopFragment, R.string.nav_shop);
                 break;
-            case R.id.nav_donate:
+            /*case R.id.nav_donate:
                 DonateFragment donateFragment = DonateFragment.newInstance();
                 replaceFragment(donateFragment, R.string.nav_donate);
+                break;*/
+            case R.id.nav_advertising:
+                PublicityFragment publicityFragment = PublicityFragment.newInstance();
+                replaceFragment(publicityFragment, R.string.nav_advertising);
                 break;
             case R.id.nav_settings:
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);

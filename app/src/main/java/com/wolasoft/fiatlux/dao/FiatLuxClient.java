@@ -7,12 +7,15 @@ package com.wolasoft.fiatlux.dao;
 import com.wolasoft.fiatlux.models.Book;
 import com.wolasoft.fiatlux.models.CdDvd;
 import com.wolasoft.fiatlux.models.Chapter;
+import com.wolasoft.fiatlux.models.Help;
 import com.wolasoft.fiatlux.models.JokeStoryReflect;
 import com.wolasoft.fiatlux.models.Lesson;
 import com.wolasoft.fiatlux.models.LessonType;
 import com.wolasoft.fiatlux.models.MultiMediaArchive;
+import com.wolasoft.fiatlux.models.Music;
 import com.wolasoft.fiatlux.models.Post;
-import com.wolasoft.fiatlux.models.StrangeStory;
+import com.wolasoft.fiatlux.models.Publicity;
+import com.wolasoft.fiatlux.models.TimeTable;
 
 import java.util.List;
 
@@ -55,14 +58,34 @@ public interface FiatLuxClient {
     @GET("jokesstoriesreflects/{id}")
     Call<JokeStoryReflect> getJokeStoryReflectById(@Path("id") String id);
 
-    @GET("stories/")
+    /*@GET("stories/")
     Call<List<StrangeStory>> listStory();
     @GET("stories/{storie}")
-    Call<StrangeStory> getStoryById(@Path("storie") String id);
+    Call<StrangeStory> getStoryById(@Path("storie") String id);*/
 
     @GET("multimediaarchives/{section}/{type}")
     Call<List<MultiMediaArchive>> listMultiMediaArchive(@Path("section") String section, @Path("type") String type);
     @GET("multimediaarchives/{archive}")
     Call<MultiMediaArchive> getMultiMediaArchiveById(@Path("archive") String id);
+
+    @GET("publicities")
+    Call<List<Publicity>> listPublicity();
+    @GET("publicities/{publicity}")
+    Call<Publicity> getPublicityById(@Path("publicity") String id);
+
+    @GET("helps")
+    Call<List<Help>> listHelps();
+    @GET("helps/{help}")
+    Call<Help> getHelpById(@Path("help") String id);
+
+    @GET("timetables")
+    Call<List<TimeTable>> listTimeTable();
+    @GET("timetables/{timetable}")
+    Call<TimeTable> getTimeTableById(@Path("timetable") String id);
+
+    @GET("musics")
+    Call<List<Music>> listMusics();
+    @GET("musics/{music}")
+    Call<Music> getMusicById(@Path("music") String id);
 
 }

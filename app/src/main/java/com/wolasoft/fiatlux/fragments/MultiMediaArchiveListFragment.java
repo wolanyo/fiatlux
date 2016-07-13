@@ -14,13 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wolasoft.fiatlux.MainActivity;
 import com.wolasoft.fiatlux.R;
+import com.wolasoft.fiatlux.activities.MultiMediaActivity;
 import com.wolasoft.fiatlux.adapters.MultiMediaArchiveListAdapter;
 import com.wolasoft.fiatlux.interfaces.IMultiMediaArchiveService;
 import com.wolasoft.fiatlux.models.MultiMediaArchive;
 import com.wolasoft.fiatlux.services.MultiMediaArchiveService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.List;
 
@@ -75,9 +74,8 @@ public class MultiMediaArchiveListFragment extends BaseFragment {
         emptyTextView = (TextView) view.findViewById(R.id.empty_textview);
         emptyImageView = (ImageView) view.findViewById(R.id.empty_image);
         rv.setAdapter(mAdapter);
-        TextView textView = (TextView) view.findViewById(R.id.network_issue_textview);
 
-        service = new MultiMediaArchiveService();
+        service = MultiMediaArchiveService.getInstance();
         initializeView();
 
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
@@ -92,7 +90,7 @@ public class MultiMediaArchiveListFragment extends BaseFragment {
     }
 
     private void initializeView(){
-        ((MainActivity)getActivity()).showProgress(R.string.on_progress, false);
+        ((MultiMediaActivity)getActivity()).showProgress(R.string.on_progress, false);
         service.getAll(CURRENT_SECTION, mArchiveType, new IMultiMediaArchiveService.CallBack<List<MultiMediaArchive>>() {
             @Override
             public void onSuccess(List<MultiMediaArchive> data) {
@@ -105,12 +103,12 @@ public class MultiMediaArchiveListFragment extends BaseFragment {
                     emptyImageView.setVisibility(View.GONE);
                     mAdapter.onDataLoaded(data);
                 }
-                ((MainActivity)getActivity()).hideProgress();
+                ((MultiMediaActivity)getActivity()).hideProgress();
             }
 
             @Override
             public void onFailure(int statusCode, String message) {
-                ((MainActivity)getActivity()).hideProgress();
+                ((MultiMediaActivity)getActivity()).hideProgress();
                 Toast.makeText(getContext(), R.string.network_issue, Toast.LENGTH_SHORT).show();
                 emptyTextView.setVisibility(View.VISIBLE);
                 emptyTextView.setText(R.string.network_issue);

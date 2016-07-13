@@ -153,7 +153,7 @@ public class ChapterDetailActivity extends BaseActivity {
             chapterContent = (TextView) rootView.findViewById(R.id.chapter_detail_content);
             chapterContent.setTypeface(((BaseActivity)getActivity()).getContentTypeFace());
 
-            service = new ChapterService();
+            service = ChapterService.getInstance();
 
             initializeView();
 

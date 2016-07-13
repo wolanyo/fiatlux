@@ -156,10 +156,17 @@
     <string name="title_activity_about">Avant propos</string>
     <string name="nav_foreword">Avant propos</string>
     <string name="title_activity_payment">Paiement</string>
+    <string name="action_download">Télécharger fichier</string>
 
     <string-array name="post_type">
         <item>Tous</item>
         <item>Audio</item>
         <item>Video</item>
     </string-array>
+    <string name="title_activity_multi_media">Multi Media</string>
+    <string name="nav_multi_media">Multimedia</string>
+    <string name="nav_advertising">Publicité</string>
+    <string name="nav_planning">Planning</string>
+    <string name="title_activity_planning_details">Planning</string>
+    <string name="title_activity_publicity_details">Publicité</string>
 </resources>

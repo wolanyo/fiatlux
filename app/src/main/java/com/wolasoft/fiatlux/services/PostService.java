@@ -1,10 +1,5 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.PostAudioVideoListAdapter;
-import com.wolasoft.fiatlux.adapters.PostListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
@@ -21,30 +16,23 @@ import retrofit2.Response;
  * Created by kkoudo on 17/04/2016.
  */
 public class PostService implements IPostService {
-    private PostListAdapter adapter = null;
-    private PostAudioVideoListAdapter audiVideoAdapter = null;
-    private Context context = null;
-    private TextView textView = null;
-    private Post myPost ;
+    private static volatile PostService instance = null;
 
-    public PostService() {
+    private PostService(){
+        super();
     }
 
-    public PostService(Post myPost) {
-        this.myPost = myPost;
+    public static final PostService getInstance(){
+        if (PostService.instance == null){
+            synchronized (PostService.class){
+                if (PostService.instance == null) {
+                    PostService.instance = new PostService();
+                }
+            }
+        }
+        return PostService.instance;
     }
-
-    public PostService(PostListAdapter adapter, Context context, TextView textView) {
-        this.adapter = adapter;
-        this.context = context;
-        this.textView = textView;
-    }
-
-    public PostService(PostAudioVideoListAdapter audiVideoAdapter, Context context, TextView textView) {
-        this.audiVideoAdapter = audiVideoAdapter;
-        this.context = context;
-        this.textView = textView;
-    }
+    
 
     @Override
     public void getAll(String section, final CallBack<List<Post>> callback) {

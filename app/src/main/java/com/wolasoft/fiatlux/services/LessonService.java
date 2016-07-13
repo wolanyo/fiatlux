@@ -1,9 +1,5 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.LessonListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
@@ -20,8 +16,21 @@ import retrofit2.Response;
  * Created by kkoudo on 17/04/2016.
  */
 public class LessonService implements ILessonService {
+    private static volatile LessonService instance = null;
 
-    public LessonService() {
+    private LessonService(){
+        super();
+    }
+
+    public static final LessonService getInstance(){
+        if (LessonService.instance == null){
+            synchronized (LessonService.class){
+                if (LessonService.instance == null) {
+                    LessonService.instance = new LessonService();
+                }
+            }
+        }
+        return LessonService.instance;
     }
 
     @Override

@@ -1,9 +1,5 @@
 package com.wolasoft.fiatlux.services;
 
-import android.content.Context;
-import android.widget.TextView;
-
-import com.wolasoft.fiatlux.adapters.LessonTypeListAdapter;
 import com.wolasoft.fiatlux.dao.FiatLuxClient;
 import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
 import com.wolasoft.fiatlux.enums.HttpStatus;
@@ -21,22 +17,21 @@ import retrofit2.Response;
  */
 public class LessonTypeService implements ILessonTypeService {
 
-    LessonTypeListAdapter adapter = null;
-    Context context = null;
-    TextView textView = null;
+    private static volatile LessonTypeService instance = null;
 
-    public LessonTypeService() {
+    private LessonTypeService(){
+        super();
     }
 
-    public LessonTypeService(LessonTypeListAdapter adapter, Context context) {
-        this.adapter = adapter;
-        this.context = context;
-    }
-
-    public LessonTypeService(LessonTypeListAdapter adapter, Context context, TextView textView) {
-        this.adapter = adapter;
-        this.context = context;
-        this.textView = textView;
+    public static final LessonTypeService getInstance(){
+        if (LessonTypeService.instance == null){
+            synchronized (LessonTypeService.class){
+                if (LessonTypeService.instance == null) {
+                    LessonTypeService.instance = new LessonTypeService();
+                }
+            }
+        }
+        return LessonTypeService.instance;
     }
 
     @Override

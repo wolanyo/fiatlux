@@ -53,7 +53,7 @@ public class LessonListActivity extends BaseActivity {
         emptyTextView = (TextView) findViewById(R.id.empty_textview);
         emptyImageView = (ImageView) findViewById(R.id.empty_image);
 
-        service = new LessonService();
+        service = LessonService.getInstance();
 
         initializeView();
 

@@ -90,7 +90,7 @@ public class PostAudioVideoListFragment extends BaseFragment {
         emptyTextView = (TextView) view.findViewById(R.id.empty_textview);
         emptyImageView = (ImageView) view.findViewById(R.id.empty_image);
         rv.setAdapter(adapter);
-        service = new PostService();
+        service = PostService.getInstance();
         initializeView();
 
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
