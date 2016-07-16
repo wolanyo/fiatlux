@@ -48,7 +48,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
     public void onBindViewHolder(TimeTableViewHolder timeTableViewHolder, int position) {
         TimeTable timeTable = timeTableList.get(position) ;
         //timeTableViewHolder.timeTableImage.setImageResource(R.drawable.spirit);
-        timeTableViewHolder.display(timeTable, position);
+        timeTableViewHolder.display(timeTable, timeTable.getId());
     }
 
     @Override
@@ -63,20 +63,25 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
         private TextView timeTableTitle ;
         private TextView timeTableDate ;
         private TextView timeTableTime ;
+        private TextView timeTableAddress ;
         private int currentPosition = 0;
-        private static final String CURRENT_HELP_POSITION = "current_position";
+        private static final String TIME_TABLE_ID = "time_table_id";
         Context context;
 
         public TimeTableViewHolder(View view, final Context context) {
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface dateTimeTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
             //timeTableImage = (ImageView)view.findViewById(R.id.list_image) ;
             timeTableTitle = (TextView) view.findViewById(R.id.time_table_title);
             timeTableTitle.setTypeface(titleTypeFace);
             timeTableDate = (TextView) view.findViewById(R.id.time_table_date);
-            timeTableDate.setTypeface(titleTypeFace);
+            timeTableDate.setTypeface(dateTimeTypeFace);
             timeTableTime = (TextView) view.findViewById(R.id.time_table_time);
-            timeTableTime.setTypeface(titleTypeFace);
+            timeTableTime.setTypeface(dateTimeTypeFace);
+            timeTableAddress = (TextView) view.findViewById(R.id.time_table_address);
+            timeTableAddress.setTypeface(dateTimeTypeFace);
+
             this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
@@ -84,7 +89,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
                 public void onClick(View view){
                     Intent intent = new Intent(context, TimeTableDetailsActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
-                    intent.putExtra(CURRENT_HELP_POSITION, currentPosition);
+                    intent.putExtra(TIME_TABLE_ID, currentPosition);
                     context.startActivity(intent);
                 }
             });
@@ -94,7 +99,8 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
             //Utils.loadImage(context, timeTableImage, timeTable.getImage());
             timeTableTitle.setText(timeTable.getTitle());
             timeTableDate.setText(timeTable.getEventDate());
-            timeTableTime.setText(timeTable.getStartTime()+"-"+timeTable.getEndTime());
+            timeTableTime.setText(timeTable.getStartTime()+" - "+timeTable.getEndTime());
+            timeTableAddress.setText(timeTable.getAddress());
             this.currentPosition = currentPosition;
         }
     }

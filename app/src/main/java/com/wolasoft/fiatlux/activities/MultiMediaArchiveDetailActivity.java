@@ -44,14 +44,14 @@ public class MultiMediaArchiveDetailActivity extends YouTubeBaseActivity impleme
         youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubePlayerView.initialize(YOUTUBE_API_KEY, this);
 
-        Typeface titleTypeFace = Typeface.createFromAsset(getAssets(), "fonts/quenta.otf");
+        Typeface titleTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensedRegular.ttf");
         archiveTitle = (TextView) findViewById(R.id.archive_detail_title);
         archiveTitle.setTypeface(titleTypeFace);
         archiveDate = (TextView) findViewById(R.id.archive_detail_date);
         archiveDate.setTypeface(titleTypeFace);
 
         archiveContent = (TextView) findViewById(R.id.archive_detail_content);
-        Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/caviar.ttf");
+        Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoLight.ttf");
         archiveContent.setTypeface(contentTypeFace);
 
         service = MultiMediaArchiveService.getInstance();

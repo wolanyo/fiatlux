@@ -64,8 +64,31 @@ public class LessonService implements ILessonService {
     }
 
     @Override
-    public void getById(String id, CallBack<Lesson> myCallBack) {
+    public void getById(String id, final CallBack<Lesson> callback) {
+        FiatLuxClient client = FiatLuxServiceGenerator.createService(FiatLuxClient.class);
+        Call<Lesson> call = client.getLessonbyId(id) ;
 
+        call.enqueue(new Callback<Lesson>() {
+            @Override
+            public void onResponse(Call<Lesson> call, Response<Lesson> response) {
+                if (response.isSuccessful()) {
+                    if(callback!=null){
+                        callback.onSuccess(response.body());
+                    }
+                } else {
+                    if (callback!=null){
+                        callback.onFailure(response.code(), response.message());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Lesson> call, Throwable t) {
+                if (callback!=null){
+                    callback.onFailure(HttpStatus.UNKNONW.getStatusCode(), HttpStatus.UNKNONW.getDescription());
+                }
+            }
+        });
     }
 
 }

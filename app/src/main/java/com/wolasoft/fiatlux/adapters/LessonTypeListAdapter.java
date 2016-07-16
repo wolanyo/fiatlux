@@ -77,8 +77,8 @@ public class LessonTypeListAdapter extends RecyclerView.Adapter<LessonTypeListAd
 
         public LessonTypeViewHolder(final View view, final Context context){
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
-            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/caviar.ttf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
             lessonTypeTitle = (TextView) view.findViewById(R.id.list_title);
             lessonTypeDescription = (TextView) view.findViewById(R.id.list_resume);
             lessonTypeDescription.setTypeface(contentTypeFace);

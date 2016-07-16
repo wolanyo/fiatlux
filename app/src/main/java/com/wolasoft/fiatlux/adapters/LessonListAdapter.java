@@ -76,17 +76,19 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Le
 
     public static class LessonViewHolder extends RecyclerView.ViewHolder{
         private static final String LESSON_ID = "lesson_id";
+        private static final String LESSON_FILE_URL = "lesson_file_url";
         private ImageView lessonImage ;
         private TextView lessonTitle ;
         private TextView lessonDescription ;
         private int lessonId = 0;
+        private String fileUrl;
         private List<Lesson> lessonList;
         Context context;
 
         public LessonViewHolder(final View view, final Context context){
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
-            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/caviar.ttf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
             lessonImage = (ImageView)view.findViewById(R.id.lesson_thumbnail) ;
             lessonTitle = (TextView) view.findViewById(R.id.lesson_title);
             lessonTitle.setTypeface(titleTypeFace);
@@ -100,6 +102,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Le
                     Intent intent = new Intent(context, ChapterListActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
                     intent.putExtra(LESSON_ID, lessonId);
+                    intent.putExtra(LESSON_FILE_URL, fileUrl);
                     context.startActivity(intent);
                 }
             });
@@ -110,6 +113,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Le
             lessonTitle.setText(lesson.getTitle());
             lessonDescription.setText(Html.fromHtml(lesson.getExcerpt()));
             this.lessonId = lesson.getId();
+            this.fileUrl = lesson.getContentFile();
         }
     }
 }

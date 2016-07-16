@@ -86,8 +86,8 @@ public class ChapterListAdapter extends RecyclerView.Adapter<ChapterListAdapter.
         public ChapterViewHolder(final View view, final Context context){
             super(view);
             this.chapterIdList = ChapterListAdapter.chapterIdList;
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
-            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/caviar.ttf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
             chapterImage = (ImageView)view.findViewById(R.id.list_image) ;
             chapterTitle = (TextView) view.findViewById(R.id.list_title);
             chapterTitle.setTypeface(titleTypeFace);

@@ -169,4 +169,5 @@
     <string name="nav_planning">Planning</string>
     <string name="title_activity_planning_details">Planning</string>
     <string name="title_activity_publicity_details">Publicité</string>
+    <string name="download">Téléchargement en cours</string>
 </resources>

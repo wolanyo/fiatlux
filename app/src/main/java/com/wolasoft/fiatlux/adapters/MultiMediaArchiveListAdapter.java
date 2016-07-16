@@ -77,12 +77,15 @@ public class MultiMediaArchiveListAdapter extends RecyclerView.Adapter<MultiMedi
 
         public MultiMediaArchiveViewHolder(final View view, final Context context){
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
             multiMediaArchiveImage = (ImageView)view.findViewById(R.id.list_image) ;
             multiMediaArchiveTitle = (TextView) view.findViewById(R.id.list_title);
             multiMediaArchiveTitle.setTypeface(titleTypeFace);
             multiMediaArchiveResume = (TextView) view.findViewById(R.id.list_resume);
+            multiMediaArchiveResume.setTypeface(contentTypeFace);
             multiMediaArchiveDate = (TextView) view.findViewById(R.id.list_date);
+            multiMediaArchiveDate.setTypeface(contentTypeFace);
             this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {

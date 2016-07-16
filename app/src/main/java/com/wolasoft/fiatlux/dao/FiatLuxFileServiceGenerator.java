@@ -7,8 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by osiris on 15/05/16.
  */
-public class FiatLuxServiceGenerator {
-    public static final String API_BASE_URL = "http://fiatlux.pythonanywhere.com/webservices/";
+public class FiatLuxFileServiceGenerator {
+    public static final String API_BASE_URL = "http://fiatlux.pythonanywhere.com/";
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 

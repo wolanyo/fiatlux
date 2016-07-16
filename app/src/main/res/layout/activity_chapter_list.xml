@@ -21,10 +21,26 @@
             style="@style/EmptyMessageStyle"
             android:layout_below="@id/empty_image"/>
 
+        <TextView
+            android:id="@+id/resume_title_textview"
+            android:text="Résumé"
+            style="@style/ListViewTitleStyle"
+            android:layout_below="@id/empty_textview"/>
+
+        <TextView
+            android:id="@+id/resume_textview"
+            style="@style/LessonResumeStyle"
+            android:layout_below="@id/resume_title_textview"/>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_below="@id/resume_textview"
+            style="@style/HorizontalLineStyle"/>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/chapterlist_recycler_view"
             style="@style/RecyclerViewStyle"
-            android:layout_below="@id/empty_textview"/>
+            android:layout_below="@id/separator"/>
 
     </RelativeLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

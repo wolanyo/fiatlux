@@ -24,6 +24,9 @@ import java.util.List;
 public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdapter.PublicityViewHolder> implements QueryCallback<Publicity>{
     private List<Publicity> publicityList = null;
     private Context context = null ;
+    private static final String TEXT = "TEXT";
+    private static final String VIDEO = "VIDEO";
+    private static final String AUDIO = "AUDIO";
 
     public PublicityListAdapter(Context context) {
         this.context = context;
@@ -50,7 +53,7 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
     public void onBindViewHolder(PublicityViewHolder publicityViewHolder, int position) {
         Publicity publicity = publicityList.get(position) ;
         //publicityViewHolder.publicityImage.setImageResource(R.drawable.spirit);
-        publicityViewHolder.display(publicity, position);
+        publicityViewHolder.display(publicity, publicity.getId());
     }
 
     @Override
@@ -65,18 +68,24 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
         private ImageView publicityImage ;
         private TextView publicityTitle ;
         private TextView publicityDate ;
+        private TextView publicityType ;
         private int currentPosition = 0;
-        private static final String CURRENT_PUBLICITY_POSITION = "current_position";
+        private static final String CURRENT_PUBLICITY_ID = "current_publicity_id";
         Context context;
 
         public PublicityViewHolder(View view, final Context context) {
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
+            Typeface dateTimeTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
+            Typeface publicityTypeTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoThin.ttf");
             publicityImage = (ImageView)view.findViewById(R.id.list_image) ;
-            publicityTitle = (TextView) view.findViewById(R.id.title);
+            publicityTitle = (TextView) view.findViewById(R.id.list_title);
+            publicityType = (TextView) view.findViewById(R.id.list_resume);
+
             publicityTitle.setTypeface(titleTypeFace);
-            publicityDate = (TextView) view.findViewById(R.id.list_title);
-            publicityDate.setTypeface(titleTypeFace);
+            publicityType.setTypeface(publicityTypeTypeFace);
+            publicityDate = (TextView) view.findViewById(R.id.list_date);
+            publicityDate.setTypeface(dateTimeTypeFace);
             this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
@@ -84,7 +93,7 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
                 public void onClick(View view){
                     Intent intent = new Intent(context, PublicityDetailsActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
-                    intent.putExtra(CURRENT_PUBLICITY_POSITION, currentPosition);
+                    intent.putExtra(CURRENT_PUBLICITY_ID, currentPosition);
                     context.startActivity(intent);
                 }
             });
@@ -94,6 +103,17 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
             Utils.loadImage(context, publicityImage, publicity.getImage());
             publicityTitle.setText(publicity.getTitle());
             publicityDate.setText(publicity.getPublicationDate());
+            switch (publicity.getMediaType()){
+                case VIDEO:
+                    publicityType.setText("Video");
+                    break;
+                case AUDIO:
+                    publicityType.setText("Audio");
+                    break;
+                case TEXT:
+                    publicityType.setText("Texte");
+                    break;
+            }
             this.currentPosition = currentPosition;
         }
     }

@@ -86,7 +86,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">0dp</item>
-        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5</item>
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
         <item name="android:lineSpacingExtra">5dp</item>
@@ -115,6 +115,18 @@
         <item name="android:textColor">@color/colorLightBlack</item>
     </style>
 
+    <style name="PlanningTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_30</item>
+        <item name="android:layout_marginBottom">@dimen/margin_0</item>
+        <item name="android:layout_marginLeft">@dimen/margin_30</item>
+        <item name="android:layout_marginRight">@dimen/margin_15</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textSize">@dimen/post_content_size_tiny</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
+    </style>
+
     <style name="ListViewDescriptionStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -124,7 +136,18 @@
         <item name="android:maxLines">3</item>
         <item name="android:textColor">@color/colorLightBlack</item>
         <item name="android:textSize">13dp</item>
-        <item name="android:ellipsize">end</item>
+        <item name="android:freezesText">true</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <style name="LessonResumeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_padding</item>
+        <item name="android:paddingRight">@dimen/list_padding</item>
+        <item name="android:layout_marginTop">@dimen/margin_5</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:freezesText">true</item>
         <item name="android:lineSpacingExtra">3dp</item>
     </style>
@@ -138,9 +161,9 @@
         <item name="android:maxLines">2</item>
         <item name="android:textColor">@color/colorLightBlack</item>
         <item name="android:textSize">13dp</item>="
-        <item name="android:ellipsize">end</item>
+        <!--<item name="android:ellipsize">end</item>-->
         <item name="android:freezesText">true</item>
-        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:lineSpacingExtra">@dimen/margin_5</item>
     </style>
 
     <style name="ListViewTitleStyle">
@@ -152,7 +175,7 @@
         <item name="android:maxLines">2</item>
         <item name="android:textColor">@color/colorLightBlack</item>
         <item name="android:textSize">25dp</item>
-        <item name="android:ellipsize">end</item>
+        <!--<item name="android:ellipsize">end</item>-->
         <item name="android:freezesText">true</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -167,9 +190,33 @@
         <item name="android:maxLines">1</item>
         <item name="android:textColor">@color/colorLightBlack</item>
         <item name="android:textSize">19dp</item>
-        <item name="android:ellipsize">end</item>
+        <!--<item name="android:ellipsize">end</item>-->
         <item name="android:freezesText">true</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ListViewTinyDateTimeStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_padding</item>
+        <item name="android:paddingRight">@dimen/margin_5</item>
+        <item name="android:paddingTop">@dimen/margin_5</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="ListViewTinyNeutralStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/list_padding</item>
+        <item name="android:paddingRight">@dimen/margin_5</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="ListViewImageStyle">
@@ -282,6 +329,13 @@
         <item name="android:gravity">center</item>
         <item name="android:visibility">gone</item>
         <item name="android:text">@string/empty_message</item>
+    </style>
+
+    <style name="PlanningIconStyle">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_30</item>
+        <item name="android:layout_marginLeft">@dimen/margin_15</item>
     </style>
 
     <dimen name="margin_0">0dp</dimen>

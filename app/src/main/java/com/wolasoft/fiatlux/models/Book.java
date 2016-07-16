@@ -6,6 +6,7 @@ package com.wolasoft.fiatlux.models;
 public class Book extends Document {
 
     private int numberOfPage ;
+    private String excerptFile;
 
     public Book(){
 
@@ -26,5 +27,13 @@ public class Book extends Document {
 
     public void setNumberOfPage(int numberOfPage) {
         this.numberOfPage = numberOfPage;
+    }
+
+    public String getExcerptFile() {
+        return excerptFile;
+    }
+
+    public void setExcerptFile(String excerptFile) {
+        this.excerptFile = excerptFile;
     }
 }

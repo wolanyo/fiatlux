@@ -5,6 +5,7 @@ package com.wolasoft.fiatlux.models;
  */
 public class Lesson extends Common {
     private int position ;
+    private String contentFile;
 
     public Lesson() {
     }
@@ -36,5 +37,13 @@ public class Lesson extends Common {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public String getContentFile() {
+        return contentFile;
+    }
+
+    public void setContentFile(String contentFile) {
+        this.contentFile = contentFile;
     }
 }

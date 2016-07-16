@@ -19,9 +19,12 @@ import com.wolasoft.fiatlux.models.TimeTable;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 public interface FiatLuxClient {
 
@@ -37,6 +40,9 @@ public interface FiatLuxClient {
 
     @GET("lessons/{lessontype}")
     Call<List<Lesson>> listLesson(@Path("lessontype") String id);
+
+    @GET("lesson/{id}")
+    Call<Lesson> getLessonbyId(@Path("id") String id);
 
     @GET("lessons/{id}/chapter")
     Call<List<Chapter>> listChapter(@Path("id") String id);
@@ -87,5 +93,10 @@ public interface FiatLuxClient {
     Call<List<Music>> listMusics();
     @GET("musics/{music}")
     Call<Music> getMusicById(@Path("music") String id);
+
+    // option 2: using a dynamic URL
+    @Streaming
+    @GET
+    Call<ResponseBody> downloadFileWithDynamicUrlSync(@Url String fileUrl);
 
 }

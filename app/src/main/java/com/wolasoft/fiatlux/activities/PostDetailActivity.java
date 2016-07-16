@@ -1,14 +1,12 @@
 package com.wolasoft.fiatlux.activities;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -18,22 +16,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
+import com.google.android.youtube.player.YouTubePlayer;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.IPostService;
 import com.wolasoft.fiatlux.models.Post;
 import com.wolasoft.fiatlux.services.PostService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class PostDetailActivity extends BaseActivity {
 
@@ -208,7 +201,7 @@ public class PostDetailActivity extends BaseActivity {
                     floatingActionButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getContext(), VimeoPlayerActivity.class);
+                            Intent intent = new Intent(getContext(), YouTubePlayer.class);
                             intent.putExtra("media_id", data.getMediaURL());
                             startActivity(intent);
                         }

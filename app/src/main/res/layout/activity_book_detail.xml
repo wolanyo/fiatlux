@@ -57,15 +57,15 @@
                 style="@style/ButtonBlue"/>
         </LinearLayout>
 
-        <View
+        <!--<View
             android:id="@+id/separator"
             android:layout_below="@id/button_layout"
-            style="@style/HorizontalGreyLineStyle"/>
+            style="@style/HorizontalGreyLineStyle"/>-->
 
         <TextView
             android:id="@+id/book_resume"
             style="@style/ContentWithoutPaddingTextViewStyle"
-            android:layout_below="@id/separator"/>
+            android:layout_below="@id/button_layout"/>
 
     </RelativeLayout>
 </ScrollView>

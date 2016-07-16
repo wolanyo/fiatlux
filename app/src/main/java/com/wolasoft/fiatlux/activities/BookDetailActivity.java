@@ -1,9 +1,16 @@
 package com.wolasoft.fiatlux.activities;
 
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +34,7 @@ public class BookDetailActivity extends BaseActivity {
     private Button previewButton;
     private TextView buyButton;
     private BookService service;
+    private String PREVIEW_URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +51,40 @@ public class BookDetailActivity extends BaseActivity {
         previewButton.setTypeface(getTitleTypeFace());
         buyButton = (Button) findViewById(R.id.book_buy);
         buyButton.setTypeface(getTitleTypeFace());
+        buyButton.setEnabled(false);
 
         String bookId = getIntent().getStringExtra(BOOK_ID);
 
         service = BookService.getInstance();
 
         initializeView(bookId);
+
+        BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
+                    long downloadId = intent.getLongExtra(
+                            DownloadManager.EXTRA_DOWNLOAD_ID, 0);
+                    DownloadManager.Query query = new DownloadManager.Query();
+                    query.setFilterById(enqueue);
+                    Cursor c = dm.query(query);
+                    if (c.moveToFirst()) {
+                        int columnIndex = c
+                                .getColumnIndex(DownloadManager.COLUMN_STATUS);
+                        if (DownloadManager.STATUS_SUCCESSFUL == c
+                                .getInt(columnIndex)) {
+
+                            String uriString = c
+                                    .getString(c
+                                            .getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
+                        }
+                    }
+                }
+            }
+        };
+        registerReceiver(receiver, new IntentFilter(
+                DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -62,6 +98,18 @@ public class BookDetailActivity extends BaseActivity {
                 bookAuthor.setText(data.getAuthor());
                 bookResume.setText(Html.fromHtml(data.getExcerpt()));
                 buyButton.setText("Acheter ("+data.getPrice()+" €)");
+                PREVIEW_URL = data.getExcerptFile();
+                previewButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(), R.string.download, Toast.LENGTH_SHORT).show();
+                        dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                        DownloadManager.Request request = new DownloadManager.Request(
+                                Uri.parse(Utils.DOWNLOAD_BASE_URL+data.getExcerptFile()));
+                        enqueue = dm.enqueue(request);
+                        showDownload();
+                    }
+                });
             }
 
             @Override
