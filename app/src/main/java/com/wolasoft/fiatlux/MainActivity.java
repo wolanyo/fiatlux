@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
 import com.wolasoft.fiatlux.activities.BaseActivity;
 import com.wolasoft.fiatlux.activities.ForewordActivity;
 import com.wolasoft.fiatlux.activities.MultiMediaActivity;
@@ -31,6 +32,8 @@ import com.wolasoft.fiatlux.fragments.PublicityFragment;
 import com.wolasoft.fiatlux.fragments.ShopFragment;
 import com.wolasoft.fiatlux.fragments.TimeTableFragment;
 import com.wolasoft.fiatlux.gcm.RegistrationService;
+
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -56,6 +59,7 @@ public class MainActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

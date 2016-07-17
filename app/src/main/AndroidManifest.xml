@@ -178,6 +178,12 @@
                 android:value="com.wolasoft.fiatlux.MainActivity" />
         </activity>
         <activity android:name=".activities.HelpDetailsActivity"></activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1f30d0ca78abf8c77096416f065a893fbaa2c0a0"
+            />
+
     </application>
 
 </manifest>
