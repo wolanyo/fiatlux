@@ -24,8 +24,7 @@
             android:id="@+id/planning_title"
             style="@style/TitleTextViewStyle"
             android:layout_marginLeft="60dp"
-            android:layout_marginBottom="0dp"
-            android:text="Hello"/>
+            android:layout_marginBottom="0dp"/>
 
         <ImageView
             android:id="@+id/planning_date_icon"
