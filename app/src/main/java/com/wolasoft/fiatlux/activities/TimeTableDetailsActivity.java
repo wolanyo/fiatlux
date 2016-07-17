@@ -36,6 +36,7 @@ public class TimeTableDetailsActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         timeTableTitle = (TextView) findViewById(R.id.planning_title);
+        timeTableTitle.setTypeface(getTitleTypeFace());
         timeTableDateTime = (TextView) findViewById(R.id.planning_date_content);
         timeTableAddress = (TextView) findViewById(R.id.planning_address_content);
         timeTableResume = (TextView) findViewById(R.id.planning_resume_content);

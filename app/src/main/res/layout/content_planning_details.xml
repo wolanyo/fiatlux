@@ -15,13 +15,16 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="50dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".activities.TimeTableDetailsActivity"
         tools:showIn="@layout/activity_planning_details">
 
         <TextView
             android:id="@+id/planning_title"
-            style="@style/ListViewTinyTitleStyle"
+            style="@style/TitleTextViewStyle"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="0dp"
             android:text="Hello"/>
 
         <ImageView
