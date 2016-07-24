@@ -1,5 +1,7 @@
 package com.wolasoft.fiatlux.models;
 
+import com.wolasoft.fiatlux.config.Utils;
+
 /**
  * Created by kkoudo on 05/03/2016.
  */
@@ -35,7 +37,7 @@ public class Post extends Common {
     }
 
     public String getPostDate() {
-        return postDate;
+        return Utils.reverseDate(postDate);
     }
 
     public void setPostDate(String postDate) {

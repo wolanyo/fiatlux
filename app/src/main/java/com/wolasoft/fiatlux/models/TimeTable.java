@@ -1,5 +1,7 @@
 package com.wolasoft.fiatlux.models;
 
+import com.wolasoft.fiatlux.config.Utils;
+
 /**
  * Created by kkoudo on 10/07/2016.
  */
@@ -13,7 +15,7 @@ public class TimeTable extends Common {
     }
 
     public String getEventDate() {
-        return eventDate;
+        return Utils.reverseDate(eventDate);
     }
 
     public void setEventDate(String eventDate) {

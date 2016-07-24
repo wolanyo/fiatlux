@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FiatLux</string>
+    <string name="app_name">FiatLux AK</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -13,7 +13,7 @@
     <string name="nav_all_post">Articles</string>
     <string name="nav_video_post">Articles Vidéo</string>
     <string name="nav_audio_post">Articles Audio</string>
-    <string name="nav_thinking">Graînes à méditer</string>
+    <string name="nav_thinking">Graînes de méditation</string>
 
     <string name="nav_course">Cours</string>
 
@@ -29,8 +29,8 @@
     <string name="nav_help">Rendons-nous service</string>
     <string name="nav_shop">Boutique</string>
     <string name="nav_message">Messagerie</string>
-    <string name="nav_joke">Blagues</string>
-    <string name="nav_story">Histoires étrange</string>
+    <string name="nav_joke">Club du rire</string>
+    <string name="nav_story">Histoires étranges</string>
     <string name="nav_settings">Réglages</string>
 
     <string name="nav_about">A propos</string>
@@ -101,7 +101,7 @@
     <string name="pref_title_section">Section par défaut</string>
     <string-array name="pref_section_list_titles">
         <item>Toutes</item>
-        <item>Spiritualitée</item>
+        <item>Spiritualité</item>
         <item>Développement personnel</item>
     </string-array>
     <string-array name="pref_section_list_values">
@@ -166,7 +166,7 @@
     <string name="title_activity_multi_media">Multi Media</string>
     <string name="nav_multi_media">Multimedia</string>
     <string name="nav_advertising">Publicité</string>
-    <string name="nav_planning">Planning</string>
+    <string name="nav_planning">Agenda</string>
     <string name="title_activity_planning_details">Planning</string>
     <string name="title_activity_publicity_details">Publicité</string>
     <string name="download">Téléchargement en cours</string>
