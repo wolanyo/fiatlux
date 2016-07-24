@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/cd_title"
-            android:text="Cd"
+            android:text="@string/text_cd"
             style="@style/ShopSectionTitleStyle"
             android:layout_below="@id/book_recycler_view"/>
 
@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/dvd_title"
-            android:text="Dvd"
+            android:text="@string/text_dvd"
             style="@style/ShopSectionTitleStyle"
             android:layout_below="@id/cd_recycler_view"/>
 

@@ -84,7 +84,7 @@
     </string>
 
     <string name="pref_title_display_name">Nom</string>
-    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_default_display_name">FiatLux Aksharam</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
     <string-array name="pref_example_list_titles">
@@ -170,4 +170,6 @@
     <string name="title_activity_planning_details">Planning</string>
     <string name="title_activity_publicity_details">Publicité</string>
     <string name="download">Téléchargement en cours</string>
+    <string name="text_dvd">DVD</string>
+    <string name="text_cd">CD</string>
 </resources>

@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.BookDetailActivity;
 import com.wolasoft.fiatlux.config.Utils;
@@ -76,7 +75,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookVi
 
         public BookViewHolder(final View view, final Context context){
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
             Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/caviar.ttf");
             bookImage = (ImageView) view.findViewById(R.id.book_image);
             bookTitle = (TextView) view.findViewById(R.id.book_title);

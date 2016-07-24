@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.PostDetailActivity;
 import com.wolasoft.fiatlux.config.Utils;
@@ -85,7 +84,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostVi
         public PostViewHolder(final View view, final Context context){
             super(view);
             postIdList = PostListAdapter.postIdList;
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
             Log.i("NB OF POST", Integer.toString(postIdList.size()));
             postImage = (ImageView)view.findViewById(R.id.post_image) ;
             postTitle = (TextView) view.findViewById(R.id.post_title);

@@ -51,6 +51,7 @@ public class ChapterListActivity extends BaseActivity {
     private TextView resumeTitleTextView;
     private ImageView emptyImageView;
     private FileDownloadService fileService;
+    private BroadcastReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +99,7 @@ public class ChapterListActivity extends BaseActivity {
             });
         }
 
-        BroadcastReceiver receiver = new BroadcastReceiver() {
+        receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
@@ -207,5 +208,12 @@ public class ChapterListActivity extends BaseActivity {
                 resumeTextView.setVisibility(View.GONE);
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        unregisterReceiver(receiver);
     }
 }

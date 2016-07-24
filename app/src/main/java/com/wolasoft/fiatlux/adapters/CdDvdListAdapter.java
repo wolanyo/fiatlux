@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.CdDvdDetailActivity;
 import com.wolasoft.fiatlux.config.Utils;
@@ -78,7 +77,7 @@ public class CdDvdListAdapter extends RecyclerView.Adapter<CdDvdListAdapter.CdDv
 
         public CdDvdViewHolder(final View view, final Context context){
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
             Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/caviar.ttf");
             cdDvdImage = (ImageView) view.findViewById(R.id.cddvd_image);
             cdDvdTitle = (TextView) view.findViewById(R.id.cddvd_title);

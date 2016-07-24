@@ -2,12 +2,10 @@ package com.wolasoft.fiatlux.activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +17,6 @@ import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.interfaces.ICdDvdService;
 import com.wolasoft.fiatlux.models.CdDvd;
 import com.wolasoft.fiatlux.services.CdDvdService;
-import com.wolasoft.fiatlux.services.CdDvdService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
 
@@ -48,8 +44,8 @@ public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubeP
         youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubePlayerView.initialize(YOUTUBE_API_KEY, this);
 
-        Typeface titleTypeFace = Typeface.createFromAsset(getAssets(), "fonts/quenta.otf");
-        Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/caviar.ttf");
+        Typeface titleTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensedRegular.ttf");
+        Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoLight.ttf");
 
         cdDvdTitle = (TextView) findViewById(R.id.video_title);
         cdDvdTitle.setTypeface(titleTypeFace);

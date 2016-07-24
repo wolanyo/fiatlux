@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -16,13 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.IBookService;
 import com.wolasoft.fiatlux.models.Book;
 import com.wolasoft.fiatlux.services.BookService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 public class BookDetailActivity extends BaseActivity {
 
@@ -34,6 +31,7 @@ public class BookDetailActivity extends BaseActivity {
     private Button previewButton;
     private TextView buyButton;
     private BookService service;
+    private BroadcastReceiver receiver;
     private String PREVIEW_URL;
 
     @Override
@@ -59,7 +57,7 @@ public class BookDetailActivity extends BaseActivity {
 
         initializeView(bookId);
 
-        BroadcastReceiver receiver = new BroadcastReceiver() {
+        receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
@@ -117,5 +115,12 @@ public class BookDetailActivity extends BaseActivity {
                 Toast.makeText(getApplicationContext(), R.string.network_issue, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        unregisterReceiver(receiver);
     }
 }
