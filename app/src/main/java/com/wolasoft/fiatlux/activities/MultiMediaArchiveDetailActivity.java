@@ -2,10 +2,8 @@ package com.wolasoft.fiatlux.activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +15,6 @@ import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.interfaces.IMultiMediaArchiveService;
 import com.wolasoft.fiatlux.models.MultiMediaArchive;
 import com.wolasoft.fiatlux.services.MultiMediaArchiveService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 public class MultiMediaArchiveDetailActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 

@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.JokeStoryReflectDetailActivity;
-import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.QueryCallback;
 import com.wolasoft.fiatlux.models.JokeStoryReflect;
 
@@ -88,7 +87,7 @@ public class JokeStoryReflectListAdapter extends RecyclerView.Adapter<JokeStoryR
         private TextView jokeResume ;
         private int currentPosition = 0;
         private ArrayList<String> jokeIdList;
-        Context context;
+        //private Context context;
 
         public JokeViewHolder(final View view, final Context context){
             super(view);
@@ -99,7 +98,7 @@ public class JokeStoryReflectListAdapter extends RecyclerView.Adapter<JokeStoryR
             jokeTitle.setTypeface(titleTypeFace);
             jokeResume = (TextView) view.findViewById(R.id.list_resume);
             jokeResume.setTypeface(contentTypeFace);
-            this.context = context;
+            //this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
                 @Override

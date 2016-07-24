@@ -41,7 +41,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookVi
 
     public void onBindViewHolder(BookViewHolder holder, int i) {
         Book book = bookList.get(i) ;
-        int numberOfBook = (bookList != null) ? bookList.size() : 0;
+        //int numberOfBook = (bookList != null) ? bookList.size() : 0;
         //bookViewHolder.bookImage.setImageResource(R.drawable.spirit);
         holder.display(book, i);
 

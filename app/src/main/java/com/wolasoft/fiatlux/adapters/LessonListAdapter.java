@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.ChapterListActivity;
 import com.wolasoft.fiatlux.config.Utils;
@@ -83,7 +82,7 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Le
         private int lessonId = 0;
         private String fileUrl;
         private List<Lesson> lessonList;
-        Context context;
+        private Context context;
 
         public LessonViewHolder(final View view, final Context context){
             super(view);

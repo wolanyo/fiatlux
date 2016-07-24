@@ -66,7 +66,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
         private TextView timeTableAddress ;
         private int currentPosition = 0;
         private static final String TIME_TABLE_ID = "time_table_id";
-        Context context;
+        //private Context context;
 
         public TimeTableViewHolder(View view, final Context context) {
             super(view);
@@ -82,7 +82,7 @@ public class TimeTableListAdapter extends RecyclerView.Adapter<TimeTableListAdap
             timeTableAddress = (TextView) view.findViewById(R.id.time_table_address);
             timeTableAddress.setTypeface(dateTimeTypeFace);
 
-            this.context = context;
+            //this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
                 @Override

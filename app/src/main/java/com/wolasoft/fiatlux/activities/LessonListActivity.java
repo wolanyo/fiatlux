@@ -1,7 +1,7 @@
 package com.wolasoft.fiatlux.activities;
 
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,7 +14,6 @@ import com.wolasoft.fiatlux.adapters.LessonListAdapter;
 import com.wolasoft.fiatlux.interfaces.ILessonService;
 import com.wolasoft.fiatlux.models.Lesson;
 import com.wolasoft.fiatlux.services.LessonService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.List;
 

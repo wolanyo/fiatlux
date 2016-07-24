@@ -20,7 +20,6 @@ import com.wolasoft.fiatlux.adapters.LessonTypeListAdapter;
 import com.wolasoft.fiatlux.interfaces.ILessonTypeService;
 import com.wolasoft.fiatlux.models.LessonType;
 import com.wolasoft.fiatlux.services.LessonTypeService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.List;
 

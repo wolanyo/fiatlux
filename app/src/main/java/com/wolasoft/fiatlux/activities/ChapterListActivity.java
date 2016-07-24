@@ -28,7 +28,6 @@ import com.wolasoft.fiatlux.interfaces.ILessonService;
 import com.wolasoft.fiatlux.models.Chapter;
 import com.wolasoft.fiatlux.models.Lesson;
 import com.wolasoft.fiatlux.services.ChapterService;
-import com.wolasoft.fiatlux.services.FileDownloadService;
 import com.wolasoft.fiatlux.services.LessonService;
 
 import java.util.List;
@@ -41,7 +40,6 @@ public class ChapterListActivity extends BaseActivity {
     private LinearLayoutManager layoutManager = null;
     private RecyclerView rv = null;
     private ChapterListAdapter adapter = null;
-    private TextView textView = null;
     private ChapterService service = null;
     private LessonService lessonService = null;
     private String lessonId ;
@@ -50,7 +48,6 @@ public class ChapterListActivity extends BaseActivity {
     private TextView resumeTextView;
     private TextView resumeTitleTextView;
     private ImageView emptyImageView;
-    private FileDownloadService fileService;
     private BroadcastReceiver receiver;
 
     @Override
@@ -82,7 +79,6 @@ public class ChapterListActivity extends BaseActivity {
 
         service = ChapterService.getInstance();
         lessonService = LessonService.getInstance();
-        //fileService = FileDownloadService.getInstance(getApplicationContext());
 
         initializeView();
 

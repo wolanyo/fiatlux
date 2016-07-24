@@ -20,7 +20,6 @@ import com.wolasoft.fiatlux.adapters.PostListAdapter;
 import com.wolasoft.fiatlux.interfaces.IPostService;
 import com.wolasoft.fiatlux.models.Post;
 import com.wolasoft.fiatlux.services.PostService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.List;
 

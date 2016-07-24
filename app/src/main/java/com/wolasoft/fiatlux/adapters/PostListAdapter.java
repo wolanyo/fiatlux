@@ -79,7 +79,7 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostVi
         private ArrayList<String> postIdList ;
         private static final String POSTS_ID_LIST = "post_list";
         private static final String CURRENT_POST_POSITION = "current_position";
-        Context context;
+        private Context context;
 
         public PostViewHolder(final View view, final Context context){
             super(view);

@@ -12,12 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wolasoft.fiatlux.R;
-import com.wolasoft.fiatlux.activities.MultiMediaArchiveDetailActivity;
+import com.wolasoft.fiatlux.activities.VimeoPlayerActivity;
 import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.QueryCallback;
 import com.wolasoft.fiatlux.models.MultiMediaArchive;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -73,7 +72,7 @@ public class MultiMediaArchiveListAdapter extends RecyclerView.Adapter<MultiMedi
         private String mediaURL = "";
         private static final String ARCHIVE_ID= "archive_id";
         private static final String MEDIA_URL= "media_url";
-        Context context;
+        private Context context;
 
         public MultiMediaArchiveViewHolder(final View view, final Context context){
             super(view);
@@ -91,7 +90,7 @@ public class MultiMediaArchiveListAdapter extends RecyclerView.Adapter<MultiMedi
             view.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View view){
-                    Intent intent = new Intent(context, MultiMediaArchiveDetailActivity.class);
+                    Intent intent = new Intent(context, VimeoPlayerActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
                     intent.putExtra(ARCHIVE_ID, archiveId);
                     intent.putExtra(MEDIA_URL, mediaURL);

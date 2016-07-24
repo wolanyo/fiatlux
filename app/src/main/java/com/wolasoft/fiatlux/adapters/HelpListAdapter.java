@@ -7,12 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.HelpDetailsActivity;
-import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.QueryCallback;
 import com.wolasoft.fiatlux.models.Help;
 
@@ -66,7 +64,7 @@ public class HelpListAdapter extends RecyclerView.Adapter<HelpListAdapter.HelpVi
         private TextView helpDate ;
         private int currentPosition = 0;
         private static final String CURRENT_HELP_POSITION = "current_position";
-        Context context;
+        //private Context context;
 
         public HelpViewHolder(View view, final Context context) {
             super(view);
@@ -76,7 +74,7 @@ public class HelpListAdapter extends RecyclerView.Adapter<HelpListAdapter.HelpVi
             helpTitle.setTypeface(titleTypeFace);
             helpDate = (TextView) view.findViewById(R.id.list_title);
             helpDate.setTypeface(titleTypeFace);
-            this.context = context;
+            //this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
                 @Override

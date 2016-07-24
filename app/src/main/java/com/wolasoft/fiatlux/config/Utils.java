@@ -4,14 +4,6 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
-import com.wolasoft.fiatlux.dao.FiatLuxServiceGenerator;
-import com.wolasoft.fiatlux.services.FileDownloadService;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-import java.util.StringTokenizer;
 
 
 /**

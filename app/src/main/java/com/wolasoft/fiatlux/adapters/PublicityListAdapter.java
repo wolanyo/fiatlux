@@ -71,7 +71,7 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
         private TextView publicityType ;
         private int currentPosition = 0;
         private static final String CURRENT_PUBLICITY_ID = "current_publicity_id";
-        Context context;
+        private Context context;
 
         public PublicityViewHolder(View view, final Context context) {
             super(view);

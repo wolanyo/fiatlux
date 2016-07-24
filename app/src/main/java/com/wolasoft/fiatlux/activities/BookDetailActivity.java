@@ -32,7 +32,6 @@ public class BookDetailActivity extends BaseActivity {
     private TextView buyButton;
     private BookService service;
     private BroadcastReceiver receiver;
-    private String PREVIEW_URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +95,6 @@ public class BookDetailActivity extends BaseActivity {
                 bookAuthor.setText(data.getAuthor());
                 bookResume.setText(Html.fromHtml(data.getExcerpt()));
                 buyButton.setText("Acheter ("+data.getPrice()+" €)");
-                PREVIEW_URL = data.getExcerptFile();
                 previewButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

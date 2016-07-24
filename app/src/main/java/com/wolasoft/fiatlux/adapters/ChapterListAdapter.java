@@ -8,13 +8,10 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.ChapterDetailActivity;
-import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.QueryCallback;
 import com.wolasoft.fiatlux.models.Chapter;
 
@@ -76,24 +73,24 @@ public class ChapterListAdapter extends RecyclerView.Adapter<ChapterListAdapter.
     public static class ChapterViewHolder extends RecyclerView.ViewHolder{
         private static final String CHAPTER_ID_LIST = "chapter_list";
         private static final String CURRENT_CHAPTER_POSITION = "current_position";
-        private ImageView chapterImage ;
+        //private ImageView chapterImage ;
         private TextView chapterTitle ;
         private TextView chapterResume ;
         private int currentPosition = 0;
         private ArrayList<String> chapterIdList;
-        Context context;
+        //private Context context;
 
         public ChapterViewHolder(final View view, final Context context){
             super(view);
             this.chapterIdList = ChapterListAdapter.chapterIdList;
             Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
             Typeface contentTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoLight.ttf");
-            chapterImage = (ImageView)view.findViewById(R.id.list_image) ;
+            //chapterImage = (ImageView)view.findViewById(R.id.list_image) ;
             chapterTitle = (TextView) view.findViewById(R.id.list_title);
             chapterTitle.setTypeface(titleTypeFace);
             chapterResume = (TextView) view.findViewById(R.id.list_resume);
             chapterResume.setTypeface(contentTypeFace);
-            this.context = context;
+            //this.context = context;
 
             view.setOnClickListener( new View.OnClickListener() {
                 @Override

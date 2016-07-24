@@ -1,33 +1,25 @@
 package com.wolasoft.fiatlux.activities;
 
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.interfaces.IChapterService;
 import com.wolasoft.fiatlux.models.Chapter;
 import com.wolasoft.fiatlux.services.ChapterService;
-import com.wolasoft.fiatlux.services.ServiceInterface;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ChapterDetailActivity extends BaseActivity {
 

@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.wolasoft.fiatlux.R;
 import com.wolasoft.fiatlux.activities.PostDetailActivity;
 import com.wolasoft.fiatlux.config.Utils;
@@ -81,7 +80,7 @@ public class PostAudioVideoListAdapter extends RecyclerView.Adapter<PostAudioVid
         private ArrayList<String> postIdList ;
         private static final String POSTS_ID_LIST = "post_list";
         private static final String CURRENT_POST_POSITION = "current_position";
-        Context context;
+        private Context context;
 
         public PostViewHolder(final View view, final Context context){
             super(view);

@@ -1,16 +1,13 @@
 package com.wolasoft.fiatlux;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
@@ -38,23 +35,22 @@ import io.fabric.sdk.android.Fabric;
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TV_PROGRAM = "TVPROGRAM";
-    private static final String SEMINARY = "SEMINARY";
+    //private static final String TV_PROGRAM = "TVPROGRAM";
+    //private static final String SEMINARY = "SEMINARY";
     private static final String AUDIO_POST = "AUDIO";
     private static final String VIDEO_POST = "VIDEO";
     private static final String JOKE = "BLAGUE";
     private static final String STORY = "HISTOIRE";
     private static final String REFLECT = "PENSEE";
     private boolean POSTS_MENUES_VISIBLE = true;
-    private String CURRENT_SECTION;
+    //private String CURRENT_SECTION;
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
     private PostListFragment postListFragment;
-    private SharedPreferences sharedPreferences;
+    //private SharedPreferences sharedPreferences;
 
-    private ActionBar actionBar;
-    private MenuItem postTypeSpinner ;
+    //private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +59,7 @@ public class MainActivity extends BaseActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
+        //actionBar = getSupportActionBar();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,8 +71,8 @@ public class MainActivity extends BaseActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //setting up prefenrences
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        CURRENT_SECTION = sharedPreferences.getString(SettingsActivity.CURRENT_SECTION_KEY, "");
+        //sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        //CURRENT_SECTION = sharedPreferences.getString(SettingsActivity.CURRENT_SECTION_KEY, "");
         //Toast.makeText(this, CURRENT_SECTION, Toast.LENGTH_SHORT).show();
 
         postListFragment = PostListFragment.newInstance();

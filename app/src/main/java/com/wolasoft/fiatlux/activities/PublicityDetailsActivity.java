@@ -6,8 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +21,7 @@ public class PublicityDetailsActivity extends BaseActivity {
     private TextView publicityTitle ;
     private TextView publicityDate;
     private TextView publicityContent;
-    private ImageView mediaTypeImage ;
+    //private ImageView mediaTypeImage ;
     private PublicityService service;
     private FloatingActionButton floatingActionButton;
 
@@ -49,7 +47,7 @@ public class PublicityDetailsActivity extends BaseActivity {
         publicityContent = (TextView) findViewById(R.id.publicity_detail_content);
         publicityContent.setTypeface(getContentTypeFace());
 
-        mediaTypeImage = (ImageView) findViewById(R.id.media_type_image);
+        //mediaTypeImage = (ImageView) findViewById(R.id.media_type_image);
 
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
 

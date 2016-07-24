@@ -73,7 +73,7 @@ public class CdDvdListAdapter extends RecyclerView.Adapter<CdDvdListAdapter.CdDv
         private TextView cdDvdPrice;
         private String cdDvdId = "";
         private String mediaURL = "";
-        Context context;
+        private Context context;
 
         public CdDvdViewHolder(final View view, final Context context){
             super(view);
