@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wolasoft.fiatlux.R;
+import com.wolasoft.fiatlux.activities.MultiMediaArchiveDetailActivity;
 import com.wolasoft.fiatlux.activities.VimeoPlayerActivity;
 import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.QueryCallback;
@@ -90,7 +91,7 @@ public class MultiMediaArchiveListAdapter extends RecyclerView.Adapter<MultiMedi
             view.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View view){
-                    Intent intent = new Intent(context, VimeoPlayerActivity.class);
+                    Intent intent = new Intent(context, MultiMediaArchiveDetailActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
                     intent.putExtra(ARCHIVE_ID, archiveId);
                     intent.putExtra(MEDIA_URL, mediaURL);
@@ -100,7 +101,11 @@ public class MultiMediaArchiveListAdapter extends RecyclerView.Adapter<MultiMedi
         }
 
         public void display(MultiMediaArchive multiMediaArchive, int currentPosition){
-            Utils.loadImage(context, multiMediaArchiveImage, multiMediaArchive.getImage());
+            if (multiMediaArchive.getImage() != null) {
+                if (!multiMediaArchive.getImage().isEmpty()) {
+                    Utils.loadImage(context, multiMediaArchiveImage, multiMediaArchive.getImage());
+                }
+            }
             multiMediaArchiveTitle.setText(multiMediaArchive.getTitle());
             multiMediaArchiveResume.setText(Html.fromHtml(multiMediaArchive.getExcerpt()));
             multiMediaArchiveDate.setText(multiMediaArchive.getPublishDate());

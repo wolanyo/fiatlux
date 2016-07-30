@@ -37,7 +37,7 @@
         <TextView
             android:id="@+id/planning_date_content"
             style="@style/PlanningTextViewStyle"
-            android:text="Hello"
+            android:text="@string/default_text"
             android:layout_below="@id/planning_title"
             android:layout_toRightOf="@id/planning_date_icon"/>
 
@@ -52,7 +52,7 @@
         <TextView
             android:id="@+id/planning_address_content"
             style="@style/PlanningTextViewStyle"
-            android:text="Hello"
+            android:text="@string/default_text"
             android:layout_toRightOf="@id/planning_address_icon"
             android:layout_below="@id/planning_date_icon"/>
 
@@ -67,7 +67,7 @@
         <TextView
             android:id="@+id/planning_resume_content"
             style="@style/PlanningTextViewStyle"
-            android:text="Hello"
+            android:text="@string/default_text"
             android:layout_toRightOf="@id/planning_address_icon"
             android:layout_below="@id/planning_address_content"/>
 

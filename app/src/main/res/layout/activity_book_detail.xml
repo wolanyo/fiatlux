@@ -28,7 +28,7 @@
             android:textSize="22sp"
             android:lineSpacingExtra="3dp"
             android:textColor="@color/colorBlack"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_toRightOf="@id/book_image"/>
 
         <TextView

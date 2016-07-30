@@ -28,18 +28,18 @@
             android:id="@+id/list_image"
             style="@style/ListViewImageStyle"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/afra"/>
+            android:src="@drawable/noimage"/>
 
         <TextView
             android:id="@+id/list_title"
             style="@style/ListViewTinyTitleStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_toRightOf="@id/list_image"/>
 
         <TextView
             android:id="@+id/list_resume"
             style="@style/ListViewTinyDescriptionStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/list_title"
             android:elegantTextHeight="true"
             android:layout_toRightOf="@id/list_image"/>
@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/list_date"
             style="@style/DateTinyTextViewStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/list_resume"
             android:elegantTextHeight="true"
             android:layout_toRightOf="@id/list_image"/>

@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
+import com.wolasoft.fiatlux.activities.AboutActivity;
 import com.wolasoft.fiatlux.activities.BaseActivity;
 import com.wolasoft.fiatlux.activities.ForewordActivity;
 import com.wolasoft.fiatlux.activities.MultiMediaActivity;
@@ -167,8 +168,8 @@ public class MainActivity extends BaseActivity
 
         switch (id) {
             case R.id.nav_foreword:
-                Intent aboutIntent = new Intent(getApplicationContext(), ForewordActivity.class);
-                startActivity(aboutIntent);
+                Intent forewordIntent = new Intent(getApplicationContext(), ForewordActivity.class);
+                startActivity(forewordIntent);
                 break;
             case R.id.nav_all_post:
                 replaceFragment(postListFragment, R.string.nav_all_post);
@@ -230,7 +231,8 @@ public class MainActivity extends BaseActivity
                 startActivity(intent);
                 break;
             case R.id.nav_about:
-                showAbout();
+                Intent aboutIntent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(aboutIntent);
                 break;
             default:
                 break;

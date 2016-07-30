@@ -146,8 +146,10 @@ public class JokeStoryReflectDetailActivity extends BaseActivity {
 
                 @Override
                 public void onSuccess(JokeStoryReflect data) {
-                    if (!data.getImage().isEmpty()){
-                        Utils.loadImage(getContext(), jokeImage, data.getImage());
+                    if (data.getImage() != null){
+                        if (!data.getImage().isEmpty()) {
+                            Utils.loadImage(getContext(), jokeImage, data.getImage());
+                        }
                     }
                     jokeTitle.setText(data.getTitle());
                     jokeContent.setText(Html.fromHtml(data.getContent()));

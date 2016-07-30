@@ -12,6 +12,8 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
     </style>
 
     <style name="AppTheme.ActionBar">
@@ -195,6 +197,21 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="ListViewTinyTitleStyle2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/margin_0</item>
+        <item name="android:paddingRight">@dimen/list_padding</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
+        <item name="android:textSize">19dp</item>
+        <!--<item name="android:ellipsize">end</item>-->
+        <item name="android:freezesText">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="ListViewTinyDateTimeStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -205,12 +222,25 @@
         <item name="android:maxLines">1</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ListViewTinyNeutralStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">@dimen/list_padding</item>
+        <item name="android:paddingRight">@dimen/margin_5</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="ListViewTinyNeutralStyle2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/margin_0</item>
         <item name="android:paddingRight">@dimen/margin_5</item>
         <item name="android:paddingTop">3dp</item>
         <item name="android:paddingBottom">0dp</item>
@@ -302,7 +332,7 @@
 
     <style name="ButtonWhiteSlimDefaultStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_height">35dp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/padding_ten</item>
         <item name="android:textSize">11sp</item>
@@ -320,6 +350,15 @@
         <item name="android:visibility">gone</item>
     </style>
 
+    <style name="AboutImageViewStyle">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@drawable/aksharam</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
     <style name="EmptyMessageStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -331,6 +370,17 @@
         <item name="android:text">@string/empty_message</item>
     </style>
 
+    <style name="AboutMessageStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_15</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:text">@string/about_message</item>
+    </style>
+
     <style name="PlanningIconStyle">
         <item name="android:layout_width">20dp</item>
         <item name="android:layout_height">20dp</item>
@@ -339,5 +389,6 @@
     </style>
 
     <dimen name="margin_0">0dp</dimen>
+    <string name="about_message">FiatLux  1.0.0</string>
 </resources>
 

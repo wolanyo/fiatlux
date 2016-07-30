@@ -1,83 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.wolasoft.fiatlux.activities.CdDvdDetailActivity">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
+    <include layout="@layout/content_cddvd_detail" />
 
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_media_play" />
 
-    <View
-        android:id="@+id/separator"
-        style="@style/HorizontalLineStyle"/>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/margin_15"
-            tools:context="com.wolasoft.fiatlux.activities.CdDvdDetailActivity">
-
-            <TextView
-                android:id="@+id/video_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:lineSpacingExtra="3dp"
-                android:textColor="@color/colorBlack"
-                android:text="hello"/>
-
-            <TextView
-                android:id="@+id/video_duration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="duration"
-                android:layout_marginTop="@dimen/margin_15"
-                android:textSize="13sp"
-                android:layout_below="@id/video_title"/>
-
-            <TextView
-                android:id="@+id/video_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_15"
-                android:text="author"
-                android:textSize="13sp"
-                android:layout_below="@id/video_duration"/>
-
-            <LinearLayout
-                android:id="@+id/button_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_below="@id/video_author">
-
-                <Button
-                    android:id="@+id/video_buy"
-                    style="@style/ButtonWhiteSlimDefaultStyle"/>
-            </LinearLayout>
-
-            <View
-                android:id="@+id/separator2"
-                android:layout_below="@id/button_layout"
-                style="@style/HorizontalGreyLineStyle"/>
-
-            <TextView
-                android:id="@+id/video_resume"
-                style="@style/ContentWithoutPaddingTextViewStyle"
-                android:layout_below="@id/separator2"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

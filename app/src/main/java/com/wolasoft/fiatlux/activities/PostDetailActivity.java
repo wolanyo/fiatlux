@@ -121,6 +121,7 @@ public class PostDetailActivity extends BaseActivity {
         private Animation fadeInAnimation;
         private Animation fadeOutAnimation;
         private FloatingActionButton floatingActionButton;
+        private String MEDIA_ID_TAG = "media_id";
 
         public PlaceholderFragment() {
         }
@@ -176,8 +177,10 @@ public class PostDetailActivity extends BaseActivity {
             service.getById(postId, new IPostService.CallBack<Post>() {
                 @Override
                 public void onSuccess(final Post data) {
-                    if (!data.getImage().isEmpty()){
-                        Utils.loadImage(getContext(), postImage, data.getImage());
+                    if (data.getImage() != null) {
+                        if (!data.getImage().isEmpty()) {
+                            Utils.loadImage(getContext(), postImage, data.getImage());
+                        }
                     }
 
                     postTitle.setText(data.getTitle());
@@ -201,8 +204,8 @@ public class PostDetailActivity extends BaseActivity {
                     floatingActionButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getContext(), YouTubePlayer.class);
-                            intent.putExtra("media_id", data.getMediaURL());
+                            Intent intent = new Intent(getContext(), VimeoPlayerActivity.class);
+                            intent.putExtra(MEDIA_ID_TAG, data.getMediaURL());
                             startActivity(intent);
                         }
                     });

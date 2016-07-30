@@ -172,4 +172,11 @@
     <string name="download">Téléchargement en cours</string>
     <string name="text_dvd">DVD</string>
     <string name="text_cd">CD</string>
+    <string name="loading_video">Loading video…</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_cddvd_details">Détails du CD/DVD</string>
+    <string name="default_text"></string>
+    <string name="app_version">Version %1$s</string>
+    <string name="copyright">2016 Wolasoft Corporation\nAll rights reserved.</string>
+    <string name="app_title">FiatLux Aksharam</string>
 </resources>

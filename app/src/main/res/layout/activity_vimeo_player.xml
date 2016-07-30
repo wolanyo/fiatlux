@@ -9,11 +9,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wolasoft.fiatlux.activities.VimeoPlayerActivity">
 
-    <WebView
-        android:id="@+id/vimeo_webview"
+    <RelativeLayout
+        android:id="@+id/nonVideoLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-    </WebView>
+        <com.wolasoft.fiatlux.views.VideoEnabledWebView
+            android:id="@+id/vimeo_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+        </com.wolasoft.fiatlux.views.VideoEnabledWebView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/videoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- View that will be shown while the fullscreen video loads. For example you could include
+        a "Loading..." message. However, in this particular example this view is actually defined in
+        view_loading_video.xml and inflated programmatically in ExampleActivity.java. The reason for
+        this is to keep the main layout (this file) cleaner. -->
+        <!-- <View
+            android:id="@+id/videoLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" /> -->
+
+    </RelativeLayout>
 
 </RelativeLayout>

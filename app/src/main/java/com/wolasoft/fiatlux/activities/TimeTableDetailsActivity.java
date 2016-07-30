@@ -1,5 +1,6 @@
 package com.wolasoft.fiatlux.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,15 +19,21 @@ import com.wolasoft.fiatlux.models.TimeTable;
 import com.wolasoft.fiatlux.services.BookService;
 import com.wolasoft.fiatlux.services.TimeTableService;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class TimeTableDetailsActivity extends BaseActivity {
     private static final String TIME_TABLE_ID = "time_table_id";
     private TextView timeTableTitle;
     private TextView timeTableDateTime;
     private TextView timeTableAddress;
     private TextView timeTableResume;
-
-    private TextView buyButton;
     private TimeTableService service;
+    private FloatingActionButton fab;
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+    private Date date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +48,14 @@ public class TimeTableDetailsActivity extends BaseActivity {
         timeTableAddress = (TextView) findViewById(R.id.planning_address_content);
         timeTableResume = (TextView) findViewById(R.id.planning_resume_content);
 
-        String timeTableId = Integer.toString(getIntent().getIntExtra(TIME_TABLE_ID, 0));
+        //String timeTableId = Integer.toString(getIntent().getIntExtra(TIME_TABLE_ID, 0));
 
         service = TimeTableService.getInstance();
 
         initializeView("31");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -67,6 +68,34 @@ public class TimeTableDetailsActivity extends BaseActivity {
                 timeTableDateTime.setText(data.getEventDate()+"\nDe "+data.getStartTime()+" à "+data.getEndTime()+"\n");
                 timeTableAddress.setText(data.getAddress());
                 timeTableResume.setText(Html.fromHtml(data.getExcerpt()));
+
+                fab.setVisibility(View.VISIBLE);
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Calendar cal = Calendar.getInstance();
+                        Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setType("vnd.android.cursor.item/event");
+                        try {
+                            date = formatter.parse(data.getEventDate()+" "+data.getStartTime());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        intent.putExtra("beginTime", date.getTime());
+                        intent.putExtra("allDay", false);
+                        intent.putExtra("rrule", "FREQ=YEARLY");
+                        try {
+                            date = formatter.parse(data.getEventDate()+" "+data.getEndTime());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        intent.putExtra("endTime", date.getTime());
+                        intent.putExtra("title", data.getTitle());
+                        intent.putExtra("description", Html.fromHtml(data.getExcerpt()).toString());
+                        intent.putExtra("eventLocation", data.getAddress());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

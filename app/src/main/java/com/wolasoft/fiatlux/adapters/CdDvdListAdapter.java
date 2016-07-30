@@ -101,7 +101,11 @@ public class CdDvdListAdapter extends RecyclerView.Adapter<CdDvdListAdapter.CdDv
         }
 
         public void display(CdDvd cdDvd, int currentPosition){
-            Utils.loadImage(context, cdDvdImage, cdDvd.getImage());
+            if (cdDvd.getImage() != null) {
+                if (!cdDvd.getImage().isEmpty()) {
+                    Utils.loadImage(context, cdDvdImage, cdDvd.getImage());
+                }
+            }
             cdDvdTitle.setText(cdDvd.getTitle());
             cdDvdAuthor.setText(cdDvd.getAuthor());
             cdDvdPrice.setText(Float.toString(cdDvd.getPrice())+CURRENCY);

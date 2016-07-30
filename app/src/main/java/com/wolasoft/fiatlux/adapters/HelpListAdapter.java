@@ -68,7 +68,7 @@ public class HelpListAdapter extends RecyclerView.Adapter<HelpListAdapter.HelpVi
 
         public HelpViewHolder(View view, final Context context) {
             super(view);
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedLight.ttf");
             //helpImage = (ImageView)view.findViewById(R.id.list_image) ;
             helpTitle = (TextView) view.findViewById(R.id.title);
             helpTitle.setTypeface(titleTypeFace);

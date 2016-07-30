@@ -27,26 +27,26 @@
         <TextView
             android:id="@+id/planning_title"
             style="@style/ListViewTinyTitleStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_alignParentTop="true"/>
 
         <TextView
             android:id="@+id/planning_date"
             style="@style/ListViewTinyDateTimeStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/list_title"/>
 
         <TextView
             android:id="@+id/planning_time"
             style="@style/ListViewTinyTitleStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/list_title"
             android:layout_toRightOf="@id/list_date"/>
 
         <TextView
             android:id="@+id/planning_resume"
             style="@style/ListViewDescriptionStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/list_date" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

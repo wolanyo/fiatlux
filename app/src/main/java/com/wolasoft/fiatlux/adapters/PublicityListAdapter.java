@@ -100,7 +100,11 @@ public class PublicityListAdapter extends RecyclerView.Adapter<PublicityListAdap
         }
 
         public void display(Publicity publicity, int currentPosition){
-            Utils.loadImage(context, publicityImage, publicity.getImage());
+            if (publicity.getImage() != null) {
+                if (!publicity.getImage().isEmpty()) {
+                    Utils.loadImage(context, publicityImage, publicity.getImage());
+                }
+            }
             publicityTitle.setText(publicity.getTitle());
             publicityDate.setText(publicity.getPublicationDate());
             switch (publicity.getMediaType()){

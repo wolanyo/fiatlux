@@ -108,7 +108,11 @@ public class LessonListAdapter extends RecyclerView.Adapter<LessonListAdapter.Le
         }
 
         public void display(Lesson lesson){
-            Utils.loadImage(context, lessonImage, lesson.getImage());
+            if (lesson.getImage() != null) {
+                if (!lesson.getImage().isEmpty()) {
+                    Utils.loadImage(context, lessonImage, lesson.getImage());
+                }
+            }
             lessonTitle.setText(lesson.getTitle());
             lessonDescription.setText(Html.fromHtml(lesson.getExcerpt()));
             this.lessonId = lesson.getId();

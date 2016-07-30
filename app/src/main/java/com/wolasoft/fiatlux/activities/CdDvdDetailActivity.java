@@ -3,9 +3,12 @@ package com.wolasoft.fiatlux.activities;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,24 +17,23 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.wolasoft.fiatlux.R;
+import com.wolasoft.fiatlux.config.Utils;
 import com.wolasoft.fiatlux.interfaces.ICdDvdService;
 import com.wolasoft.fiatlux.models.CdDvd;
 import com.wolasoft.fiatlux.services.CdDvdService;
 
-public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
+public class CdDvdDetailActivity extends BaseActivity{
 
     private static final String BOOK_ID = "cddvd_id";
-    private static final int RECOVERY_REQUEST = 1;
-    private static final String YOUTUBE_API_KEY =" AIzaSyAOjvOBFGL3DdJdCdqHOoJvvfjL3jBkLTU ";
-    private static final String MEDIA_URL = "media_url";
+    private String MEDIA_ID_TAG = "media_id";
     private TextView cdDvdTitle;
     private TextView cdDvdAuthor;
     private TextView cdDvdDuration;
     private TextView cdDvdResume;
     private TextView buyButton;
     private CdDvdService service;
-    private String mediaURL = "";
-    private YouTubePlayerView youTubePlayerView;
+    private ImageView imageView;
+    private FloatingActionButton fab;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +41,21 @@ public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubeP
         setContentView(R.layout.activity_cd_dvd_detail);
 
         String cdDvdId = getIntent().getStringExtra(BOOK_ID);
-        mediaURL = getIntent().getStringExtra(MEDIA_URL);
 
-        youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
-        youTubePlayerView.initialize(YOUTUBE_API_KEY, this);
-
-        Typeface titleTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensedRegular.ttf");
-        Typeface contentTypeFace = Typeface.createFromAsset(getAssets(), "fonts/RobotoLight.ttf");
+        imageView = (ImageView) findViewById(R.id.image_view);
 
         cdDvdTitle = (TextView) findViewById(R.id.video_title);
-        cdDvdTitle.setTypeface(titleTypeFace);
+        cdDvdTitle.setTypeface(getTitleTypeFace());
         cdDvdAuthor = (TextView) findViewById(R.id.video_author);
-        cdDvdAuthor.setTypeface(titleTypeFace);
+        cdDvdAuthor.setTypeface(getTitleTypeFace());
         cdDvdDuration = (TextView) findViewById(R.id.video_duration);
         cdDvdResume = (TextView) findViewById(R.id.video_resume);
-        cdDvdResume.setTypeface(contentTypeFace);
+        cdDvdResume.setTypeface(getContentTypeFace());
         buyButton = (Button) findViewById(R.id.video_buy);
-        buyButton.setTypeface(titleTypeFace);
+        buyButton.setTypeface(getTitleTypeFace());
 
-        Log.i("CD DVD ID", cdDvdId);
+        //Log.i("CD DVD ID", cdDvdId);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
 
         service = CdDvdService.getInstance();
 
@@ -68,11 +66,25 @@ public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubeP
         service.getById(id, new ICdDvdService.CallBack<CdDvd>() {
             @Override
             public void onSuccess(final CdDvd data) {
+                if (data.getImage() != null) {
+                    if (!data.getImage().isEmpty()) {
+                        Utils.loadImage(getApplicationContext(), imageView, data.getImage());
+                    }
+                }
                 cdDvdTitle.setText(data.getTitle());
                 cdDvdAuthor.setText(data.getAuthor());
                 cdDvdResume.setText(Html.fromHtml(data.getExcerpt()));
                 cdDvdDuration.setText(data.getDuration()+" min");
                 buyButton.setText("Acheter ("+data.getPrice()+" €)");
+
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplicationContext(), VimeoPlayerActivity.class);
+                        intent.putExtra(MEDIA_ID_TAG, data.getMediaURL());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -80,35 +92,5 @@ public class CdDvdDetailActivity extends YouTubeBaseActivity implements YouTubeP
                 Toast.makeText(getApplicationContext(), R.string.network_issue, Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
-        if(!wasRestored){
-            youTubePlayer.cueVideo(mediaURL);
-            youTubePlayer.setFullscreen(false);
-        }
-    }
-
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-        if (youTubeInitializationResult.isUserRecoverableError()) {
-            youTubeInitializationResult.getErrorDialog(this, RECOVERY_REQUEST).show();
-        } else {
-            String error = getString(R.string.player_error) + youTubeInitializationResult.toString();
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    protected YouTubePlayer.Provider getYouTubePlayerProvider() {
-        return youTubePlayerView;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RECOVERY_REQUEST) {
-            // Retry initialization if user performed a recovery action
-            getYouTubePlayerProvider().initialize(YOUTUBE_API_KEY, this);
-        }
     }
 }

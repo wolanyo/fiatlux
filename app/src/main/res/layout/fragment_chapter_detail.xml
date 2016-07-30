@@ -19,7 +19,7 @@
             android:layout_height="350dp"
             android:scaleType="fitXY"
             android:layout_alignParentTop="true"
-            android:src="@drawable/kwanyin"/>
+            android:src="@drawable/noimage"/>
 
         <TextView
             android:id="@+id/chapter_detail_chapter"

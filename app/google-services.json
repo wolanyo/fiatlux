@@ -1,12 +1,12 @@
 {
   "project_info": {
-    "project_number": "198056868116",
-    "project_id": "fiatlux-1319"
+    "project_number": "101549248399",
+    "project_id": "fiatlux-aksharam"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:198056868116:android:5225474b2cb11077",
+        "mobilesdk_app_id": "1:101549248399:android:5225474b2cb11077",
         "android_client_info": {
           "package_name": "com.wolasoft.fiatlux"
         }
@@ -14,7 +14,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAK7bFWufqXvrMtuqpC7P8zZiQMDwW_-BU"
+          "current_key": "AIzaSyDxgOw8391vqGe3rPpFzNfYcykYYr8Nm70"
         }
       ],
       "services": {

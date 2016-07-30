@@ -62,8 +62,10 @@ public class PublicityDetailsActivity extends BaseActivity {
         service.getById(publicityId, new IPublicityService.CallBack<Publicity>() {
             @Override
             public void onSuccess(final Publicity data) {
-                if (!data.getImage().isEmpty()){
-                    Utils.loadImage(getApplicationContext(), publicityImage, data.getImage());
+                if (data.getImage() != null) {
+                    if (!data.getImage().isEmpty()) {
+                        Utils.loadImage(getApplicationContext(), publicityImage, data.getImage());
+                    }
                 }
 
                 publicityTitle.setText(data.getTitle());
@@ -86,7 +88,7 @@ public class PublicityDetailsActivity extends BaseActivity {
                 floatingActionButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(), YouTubePlayer.class);
+                        Intent intent = new Intent(getApplicationContext(), VimeoPlayerActivity.class);
                         intent.putExtra("media_id", data.getMediaURL());
                         startActivity(intent);
                     }

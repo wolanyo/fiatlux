@@ -85,7 +85,7 @@ public class PostAudioVideoListAdapter extends RecyclerView.Adapter<PostAudioVid
         public PostViewHolder(final View view, final Context context){
             super(view);
             postIdList = PostAudioVideoListAdapter.postIdList;
-            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/quenta.otf");
+            Typeface titleTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/RobotoCondensedRegular.ttf");
             postImage = (ImageView)view.findViewById(R.id.list_image) ;
             postTitle = (TextView) view.findViewById(R.id.list_title);
             postTitle.setTypeface(titleTypeFace);
@@ -107,7 +107,12 @@ public class PostAudioVideoListAdapter extends RecyclerView.Adapter<PostAudioVid
         }
 
         public void display(Post post, int currentPosition){
-            Utils.loadImage(context, postImage, post.getImage());
+            if (post.getImage() != null) {
+                if (!post.getImage().isEmpty()) {
+                    Utils.loadImage(context, postImage, post.getImage());
+                }
+            }
+
             postTitle.setText(post.getTitle());
             postResume.setText(Html.fromHtml(post.getExcerpt()));
             postDate.setText(post.getPostDate());

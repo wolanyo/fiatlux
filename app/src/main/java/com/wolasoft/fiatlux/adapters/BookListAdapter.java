@@ -98,7 +98,12 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookVi
         }
 
         public void display(Book book, int currentPosition){
-            Utils.loadImage(context, bookImage, book.getImage());
+            if (book.getImage() != null) {
+                if (!book.getImage().isEmpty()) {
+                    Utils.loadImage(context, bookImage, book.getImage());
+                }
+            }
+
             bookTitle.setText(book.getTitle());
             bookAuthor.setText(book.getAuthor());
             bookPrice.setText(Float.toString(book.getPrice())+CURRENCY);

@@ -21,6 +21,7 @@
     <dimen name="post_date_tiny_size">14dp</dimen>
     <dimen name="post_time_size">14dp</dimen>
     <dimen name="post_content_size_tiny">14dp</dimen>
+    <dimen name="app_title_size">20dp</dimen>
 
     <dimen name="post_content_padding">5dp</dimen>
     <dimen name="post_content_linespacing">5dp</dimen>
@@ -35,7 +36,7 @@
     <dimen name="margin_five">5dp</dimen>
     <dimen name="margin_ten">10dp</dimen>
 
-    <dimen name="button_radius">5dp</dimen>
+    <dimen name="button_radius">4dp</dimen>
     <dimen name="margin_15">15dp</dimen>
     <dimen name="margin_25">25dp</dimen>
     <dimen name="padding_15">15dp</dimen>

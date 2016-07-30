@@ -23,7 +23,7 @@ public class TimeTable extends Common {
     }
 
     public String getStartTime() {
-        return startTime;
+        return startTime.substring(0,5);
     }
 
     public void setStartTime(String startTime) {
@@ -31,7 +31,7 @@ public class TimeTable extends Common {
     }
 
     public String getEndTime() {
-        return endTime;
+        return endTime.substring(0,5);
     }
 
     public void setEndTime(String endTime) {

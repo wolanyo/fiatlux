@@ -45,13 +45,13 @@
 
         <ImageView
             android:id="@+id/media_type_image"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:contentDescription="Post media type"
             android:layout_toRightOf="@+id/post_detail_time"
             android:layout_toEndOf="@+id/post_detail_time"
             android:layout_below="@+id/separator"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="14dp"
             android:layout_marginRight="5dp"
             android:layout_marginEnd="5dp"/>
 

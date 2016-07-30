@@ -106,7 +106,12 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostVi
         }
 
         public void display(Post post, int currentPosition){
-            Utils.loadImage(context, postImage, post.getImage());
+            if (post.getImage() != null) {
+                if (!post.getImage().isEmpty()) {
+                    Utils.loadImage(context, postImage, post.getImage());
+                }
+            }
+
             postTitle.setText(post.getTitle());
             postDate.setText(post.getPostDate()+" "+post.getPostTime());
             this.currentPosition = currentPosition;

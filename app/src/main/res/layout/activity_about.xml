@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.wolasoft.fiatlux.activities.AboutActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/padding_15"
-        android:orientation="vertical"
-        tools:context=".activities.ForewordActivity">
+        android:gravity="center"
+        android:text="@string/app_title"
+        android:textSize="@dimen/app_title_size"
+        android:textColor="@color/colorWhite" />
 
-        <WebView
-            android:id="@+id/about_textview"
-            android:layout_width="match_parent"
-            style="@style/WebViewStyle" />
+    <TextView
+        android:id="@+id/version_title"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="@string/app_version"
+        android:textColor="@color/colorGrey" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:src="@drawable/aksharam"
+        />
 
-</ScrollView>
+    <TextView
+        android:id="@+id/copyright_title"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="@string/copyright"
+        android:textColor="@color/colorGrey" />
+
+</LinearLayout>
 

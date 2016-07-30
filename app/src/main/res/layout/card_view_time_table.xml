@@ -27,19 +27,19 @@
         <TextView
             android:id="@+id/time_table_title"
             style="@style/ListViewTinyTitleStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_alignParentTop="true"/>
 
         <TextView
             android:id="@+id/time_table_date"
             style="@style/ListViewTinyDateTimeStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/time_table_title"/>
 
         <TextView
             android:id="@+id/time_table_time"
-            style="@style/ListViewTinyNeutralStyle"
-            android:text=" Hello moto"
+            style="@style/ListViewTinyNeutralStyle2"
+            android:text="@string/default_text"
             android:layout_below="@id/time_table_title"
             android:layout_toRightOf="@id/time_table_date"
             android:elegantTextHeight="true" />
@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/time_table_address"
             style="@style/ListViewTinyNeutralStyle"
-            android:text="hello"
+            android:text="@string/default_text"
             android:layout_below="@id/time_table_time"
             android:elegantTextHeight="true" />
     </RelativeLayout>

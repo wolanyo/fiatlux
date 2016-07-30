@@ -17,7 +17,7 @@
             android:layout_height="220dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/afra" />
+            android:src="@drawable/noimage" />
 
         <TextView
             android:id="@+id/lesson_title"

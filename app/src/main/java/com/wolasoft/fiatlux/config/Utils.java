@@ -10,9 +10,9 @@ import com.squareup.picasso.Picasso;
  * Created by osiris on 12/06/16.
  */
 public class Utils {
-    private static final String imageUrlBase= "http://fiatlux.pythonanywhere.com";
+    private static final String imageUrlBase= "http://fiatluxaksharam.pythonanywhere.com";
     private static String token[] ;
-    public static final String DOWNLOAD_BASE_URL = "http://fiatlux.pythonanywhere.com";
+    public static final String DOWNLOAD_BASE_URL = "http://fiatluxaksharam.pythonanywhere.com";
 
     public static void loadImage(Context context, ImageView imageView, String imageName){
         Picasso.with(context).load(imageUrlBase+imageName).into(imageView);
